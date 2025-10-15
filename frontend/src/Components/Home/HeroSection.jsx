@@ -42,7 +42,7 @@ const HeroSection = () => {
           </motion.p>
 
           {/* Health Aspects Icons */}
-          <div className="sm:flex md:flex hidden sm:flex-wrap md:flex-wrap justify-start gap-4 sm:gap-6 mb-8">
+          <div className="sm:flex md:flex flex-wrap flex sm:flex-wrap md:flex-wrap justify-start gap-4 sm:gap-6 mb-8">
             {[
               { label: "Nutrition", icon: <FaAppleAlt size={28} /> },
               { label: "Fitness", icon: <FaDumbbell size={28} /> },
@@ -62,7 +62,7 @@ const HeroSection = () => {
                 }}
               >
                 <span className="mb-1">{aspect.icon}</span>
-                <span >{aspect.label}</span>
+                <span className="">{aspect.label}</span>
               </motion.div>
             ))}
           </div>
@@ -76,7 +76,7 @@ const HeroSection = () => {
           >
             <motion.a
               href="#services"
-              className="font-bold py-2 sm:py-3 px-5 sm:px-8 rounded-full shadow-lg transition transform hover:scale-105 focus:outline-none bg-green-300 text-gray-900"
+              className="py-2 sm:py-3 px-5 sm:px-8 rounded-full shadow-lg transition transform hover:scale-105 focus:outline-none bg-green-300 text-gray-900"
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.96 }}
             >
@@ -84,7 +84,7 @@ const HeroSection = () => {
             </motion.a>
             <motion.a
               href="#about"
-              className="font-bold py-2 sm:py-3 px-5 sm:px-8 rounded-full shadow-lg transition transform hover:scale-105 focus:outline-none bg-green-300 text-gray-900"
+              className="py-2 sm:py-3 px-5 sm:px-8 rounded-full shadow-lg transition transform hover:scale-105 focus:outline-none bg-green-300 text-gray-900"
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.96 }}
             >

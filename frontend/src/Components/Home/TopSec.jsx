@@ -21,7 +21,13 @@ const TopSec = () => {
     {
       name: "Avocado",
       image: Avocado,
-      nutrients: ["Healthy fats", "Fiber", "Potassium", "Vitamin E", "Vitamin C"],
+      nutrients: [
+        "Healthy fats",
+        "Fiber",
+        "Potassium",
+        "Vitamin E",
+        "Vitamin C",
+      ],
       importance:
         "Avocados support heart health, improve skin elasticity, and aid digestion. Their potassium helps regulate blood pressure.",
     },
