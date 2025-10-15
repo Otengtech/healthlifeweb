@@ -216,13 +216,13 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.5 }}
-              className="fixed top-0 right-0 h-screen w-full sm:w-[80%] md:w-[60%] bg-white/90 shadow-2xl z-50 p-6 flex flex-col overflow-y-auto"
+              className="fixed top-0 right-0 h-screen w-full sm:w-[80%] md:w-[60%] bg-gray-900 z-50 p-6 flex flex-col overflow-y-auto"
             >
               {/* Header */}
               <div className="flex justify-between items-center mb-6">
-                <h2 className="text-green-700 text-xl font-bold">Menu</h2>
+                <h2 className="text-green-500 text-xl font-bold">Menu</h2>
                 <FaTimes
-                  className="text-gray-700 cursor-pointer hover:scale-110 transition-transform"
+                  className="text-green-500 cursor-pointer hover:scale-110 transition-transform"
                   onClick={() => setMenuOpen(false)}
                   size={24}
                 />
@@ -233,13 +233,13 @@ const Navbar = () => {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
-                className="bg-gray-100 rounded-2xl p-4 mb-6"
+                className="bg-gray-100 rounded-full py-4 px-6 mb-6"
               >
                 <form
                   onSubmit={handleSearch}
                   className="flex items-center"
                 >
-                  <FaSearch className="text-gray-500 ml-2" />
+                  <FaSearch className="text-green-500 ml-2" />
                   <input
                     type="text"
                     placeholder="Search for health tips, recipes..."
@@ -252,7 +252,7 @@ const Navbar = () => {
 
               {/* Navigation Links with Icons */}
               <motion.div
-                className="flex flex-col space-y-5 text-gray-700 font-medium text-lg"
+                className="flex flex-col space-y-5 text-gray-300 font-medium text-lg"
                 initial="hidden"
                 animate="visible"
                 variants={{
@@ -288,7 +288,7 @@ const Navbar = () => {
                       onClick={() => setMenuOpen(false)}
                       className="flex items-center space-x-3 hover:text-green-700 transition-all"
                     >
-                      <span className="text-green-600">{item.icon}</span>
+                      <span className="text-green-500">{item.icon}</span>
                       <span>{item.label}</span>
                     </Link>
                   </motion.div>
