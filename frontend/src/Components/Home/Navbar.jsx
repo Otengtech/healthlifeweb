@@ -216,7 +216,7 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.5 }}
-              className="fixed top-0 right-0 h-screen w-full sm:w-[80%] md:w-[60%] bg-white/80 backdrop-blur-lg shadow-2xl z-50 p-6 flex flex-col overflow-y-auto"
+              className="fixed top-0 right-0 h-screen w-full sm:w-[80%] md:w-[60%] bg-white/90 shadow-2xl z-50 p-6 flex flex-col overflow-y-auto"
             >
               {/* Header */}
               <div className="flex justify-between items-center mb-6">
@@ -274,7 +274,7 @@ const Navbar = () => {
                     to: "/trendingpage",
                     icon: <FaDumbbell />,
                   },
-                  { label: "Contact", to: "/contact", icon: <FaEnvelope/> },
+                  { label: "Contact", to: "/contactpage", icon: <FaEnvelope/> },
                 ].map((item, i) => (
                   <motion.div
                     key={item.to}

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const HeroSection = () => {
   return (
     <div
-      className="relative w-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[600px] bg-cover bg-center flex flex-col justify-center"
+      className="relative w-full min-h-[500px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[600px] bg-cover bg-center flex flex-col justify-center"
       style={{ backgroundImage: `url(${hero})` }}
     >
       {/* Overlay */}
