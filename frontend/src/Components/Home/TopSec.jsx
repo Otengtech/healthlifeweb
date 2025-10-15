@@ -252,7 +252,7 @@ const TopSec = () => {
         >
           What is Good Health?
         </motion.h2>
-        <p className="max-w-3xl mx-auto text-gray-700 mb-10 text-sm sm:text-base leading-relaxed">
+        <p className="max-w-3xl mx-auto text-start text-gray-700 mb-10 text-sm sm:text-base leading-relaxed">
           Good health is more than the absence of disease — it's a state of
           physical, mental, and emotional well-being supported by proper
           nutrition, sleep, exercise, and strong relationships.
@@ -262,15 +262,15 @@ const TopSec = () => {
           {[
             {
               title: "What is Health?",
-              text: "Health means complete well-being — feeling good physically, mentally, and emotionally.",
+              text: "Health is not just the absence of disease or weakness—it’s a complete state of physical, mental, and emotional well-being. It’s the balance between your body, mind, and lifestyle.",
             },
             {
               title: "Factors for Good Health",
-              text: "Balanced diet, exercise, sleep, stress control, social connection, and medical care.",
+              text: "Good health depends on many factors working together in harmony. A balanced diet fuels your body with essential nutrients, while regular physical activity strengthens your muscles, heart, and immune system.",
             },
             {
               title: "Preserving Health",
-              text: "Maintain healthy habits daily to prevent illness and improve quality of life.",
+              text: "Preserving your health means making conscious choices every day. Eat whole foods, stay active, drink enough water, and get enough rest. Avoid harmful habits like smoking or excessive alcohol.",
             },
           ].map((item, i) => (
             <motion.div
@@ -280,10 +280,10 @@ const TopSec = () => {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className="bg-white p-6 rounded-xl shadow hover:shadow-md transition-shadow duration-300"
             >
-              <h3 className="text-xl font-semibold text-green-700 mb-3">
+              <h3 className="text-xl text-start font-semibold text-green-700 mb-3">
                 {item.title}
               </h3>
-              <p className="text-gray-700 text-sm sm:text-base">{item.text}</p>
+              <p className="text-gray-700 text-start text-sm sm:text-base">{item.text}</p>
             </motion.div>
           ))}
         </div>
@@ -291,12 +291,12 @@ const TopSec = () => {
 
       {/* ✅ The Need for Good Health */}
       <section
-        className="relative w-full min-h-[550px] bg-cover bg-center flex items-center justify-center px-6"
+        className="relative w-full min-h-[550px] bg-cover bg-center flex items-center justify-center sm:px-6"
         style={{ backgroundImage: `url(${leftwindow})` }}
       >
         <div className="w-full max-w-6xl flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-20">
           <div className="md:w-1/2" />
-          <div className="w-full md:w-1/2 bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-10 shadow-lg">
+          <div className="w-full md:w-1/2 bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-10">
             <motion.h2
               className="text-3xl md:text-5xl font-bold text-green-700 mb-6 text-center"
               initial={{ opacity: 0, y: 20 }}

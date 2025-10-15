@@ -66,7 +66,7 @@ const Workouts = () => {
 
       {/* Button */}
       <div className="flex justify-center">
-        <button className="flex items-center mt-10 gap-2 px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition duration-300">
+        <button className="flex items-center mt-10 gap-2 px-6 py-3 bg-green-500 text-gray-800 hover:bg-green-400 transition duration-300">
           To Workouts <FaArrowRight />
         </button>
       </div>

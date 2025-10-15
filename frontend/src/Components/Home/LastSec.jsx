@@ -78,12 +78,27 @@ const LastSec = () => {
         <h1 className="text-3xl md:text-4xl font-semibold text-green-800 mb-10">
           Meet Our Experts
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-6 md:px-12">
+
+        {/* Container: Scroll horizontally on small screens, grid on large */}
+        <div
+          className="
+      flex sm:grid 
+      sm:grid-cols-2 lg:grid-cols-4 
+      gap-6 md:gap-8 
+      overflow-x-auto sm:overflow-x-visible 
+      px-6 md:px-12 
+      w-full
+      scrollbar-hide
+    "
+        >
           {experts.map((expert, idx) => (
             <motion.div
               key={idx}
               whileHover={{ scale: 1.03 }}
-              className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+              className="
+          bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 
+          flex-shrink-0 w-72 sm:w-auto
+        "
             >
               <img
                 src={expert.image}
@@ -130,7 +145,7 @@ const LastSec = () => {
                 alt="Quote"
                 className="w-8 h-8"
               />
-              <p className="text-gray-700 text-sm md:text-base leading-relaxed text-center md:text-left">
+              <p className="text-gray-700 text-sm md:text-base leading-relaxed text-left">
                 {testimonial.message}
               </p>
               <div className="font-semibold text-green-700 text-sm md:text-base">
@@ -181,8 +196,8 @@ const LastSec = () => {
                     <span className="font-medium">Cardio:</span> Running,
                     cycling, swimming
                     <br />
-                    <span className="font-medium">Strength:</span> Weightlifting,
-                    resistance bands
+                    <span className="font-medium">Strength:</span>{" "}
+                    Weightlifting, resistance bands
                     <br />
                     <span className="font-medium">Flexibility:</span> Yoga,
                     stretching
@@ -205,7 +220,13 @@ const LastSec = () => {
                     viewBox="0 0 24 24"
                     className="text-white"
                   >
-                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
                   </svg>
                 </span>
                 <div>
@@ -218,9 +239,7 @@ const LastSec = () => {
             ))}
           </div>
 
-          <button
-            className="my-8 py-3 px-6 bg-green-500 text-gray-700 hover:bg-green-400 transition duration-300"
-          >
+          <button className="my-8 py-3 px-6 bg-green-500 text-gray-700 hover:bg-green-400 transition duration-300">
             Read More
           </button>
         </motion.div>
