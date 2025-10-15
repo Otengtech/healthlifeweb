@@ -52,7 +52,7 @@ const HeroSection = () => {
             ].map((aspect, idx) => (
               <motion.div
                 key={aspect.label}
-                className="flex flex-col items-center text-green-300 justify-center text-sm sm:text-base cursor-pointer hover:text-green-200 transition-all duration-300"
+                className="flex flex-col items-center text-gray-300 justify-center text-sm sm:text-base cursor-pointer hover:text-gray-200 transition-all duration-300"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{
@@ -76,7 +76,7 @@ const HeroSection = () => {
           >
             <motion.a
               href="#services"
-              className="py-2 sm:py-3 px-5 sm:px-8 rounded-full shadow-lg transition transform hover:scale-105 focus:outline-none bg-green-300 text-gray-700"
+              className="py-2 sm:py-3 px-5 sm:px-8 rounded-full font-bold shadow-lg transition transform hover:scale-105 focus:outline-none bg-green-300 text-gray-700"
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.96 }}
             >
@@ -84,7 +84,7 @@ const HeroSection = () => {
             </motion.a>
             <motion.a
               href="#about"
-              className="py-2 sm:py-3 px-5 sm:px-8 rounded-full shadow-lg transition transform hover:scale-105 focus:outline-none bg-green-300 text-gray-700"
+              className="py-2 sm:py-3 px-5 sm:px-8 rounded-full font-bold shadow-lg transition transform hover:scale-105 focus:outline-none bg-green-300 text-gray-700"
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.96 }}
             >

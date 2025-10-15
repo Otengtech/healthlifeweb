@@ -243,16 +243,16 @@ const TopSec = () => {
       <MiddleSec />
 
       {/* ✅ What is Good Health Section */}
-      <section className="py-16 bg-green-50 text-center px-4 sm:px-6">
+      <section className="py-16 bg-gray-900 text-center px-4 sm:px-6">
         <motion.h2
-          className="text-3xl md:text-5xl font-bold text-green-700 mb-6"
+          className="text-3xl md:text-5xl font-bold text-green-500 mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           What is Good Health?
         </motion.h2>
-        <p className="max-w-3xl mx-auto text-start text-gray-700 mb-10 text-sm sm:text-base leading-relaxed">
+        <p className="max-w-3xl mx-auto text-start text-gray-200 mb-10 text-sm sm:text-base leading-relaxed">
           Good health is more than the absence of disease — it's a state of
           physical, mental, and emotional well-being supported by proper
           nutrition, sleep, exercise, and strong relationships.
@@ -278,12 +278,12 @@ const TopSec = () => {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="bg-white p-6 rounded-xl shadow hover:shadow-md transition-shadow duration-300"
+              className="bg-gray-800 p-6 rounded-xl shadow hover:shadow-md transition-shadow duration-300"
             >
-              <h3 className="text-xl text-start font-semibold text-green-700 mb-3">
+              <h1 className="text-xl text-start font-semibold text-green-500 mb-3">
                 {item.title}
-              </h3>
-              <p className="text-gray-700 text-start text-sm sm:text-base">{item.text}</p>
+              </h1>
+              <p className="text-gray-200 text-start text-sm sm:text-base">{item.text}</p>
             </motion.div>
           ))}
         </div>
@@ -330,7 +330,7 @@ const TopSec = () => {
               ].map((item, i) => (
                 <motion.div
                   key={i}
-                  className="p-3 rounded-lg hover:bg-green-50 transition-all duration-300"
+                  className="p-6 rounded-lg bg-green-100 cursor-pointer hover:bg-green-50 transition-all duration-300"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: i * 0.1 }}
