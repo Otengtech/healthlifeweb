@@ -27,7 +27,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            Welcome to <span className="text-green-300">HealthLife</span>
+            Welcome to HealthLife
           </motion.h1>
 
           {/* Description */}
@@ -52,7 +52,7 @@ const HeroSection = () => {
             ].map((aspect, idx) => (
               <motion.div
                 key={aspect.label}
-                className="flex flex-col items-center justify-center text-sm sm:text-base cursor-pointer hover:text-green-300 transition-all duration-300"
+                className="flex flex-col items-center text-green-300 justify-center text-sm sm:text-base cursor-pointer hover:text-green-200 transition-all duration-300"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{
@@ -76,7 +76,7 @@ const HeroSection = () => {
           >
             <motion.a
               href="#services"
-              className="py-2 sm:py-3 px-5 sm:px-8 rounded-full shadow-lg transition transform hover:scale-105 focus:outline-none bg-green-300 text-gray-900"
+              className="py-2 sm:py-3 px-5 sm:px-8 rounded-full shadow-lg transition transform hover:scale-105 focus:outline-none bg-gray-900 text-green-300"
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.96 }}
             >
@@ -84,7 +84,7 @@ const HeroSection = () => {
             </motion.a>
             <motion.a
               href="#about"
-              className="py-2 sm:py-3 px-5 sm:px-8 rounded-full shadow-lg transition transform hover:scale-105 focus:outline-none bg-green-300 text-gray-900"
+              className="py-2 sm:py-3 px-5 sm:px-8 rounded-full shadow-lg transition transform hover:scale-105 focus:outline-none bg-gray-900 text-green-300"
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.96 }}
             >

@@ -47,21 +47,21 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-md">
+    <nav className="bg-gray-900 sticky top-0 z-50 shadow-md">
       <div className="flex justify-between items-center px-6 md:px-12 py-4">
         <div className="flex items-center gap-10">
           {/* Brand */}
           <Link
             to="/"
-            className="text-green-700 text-lg font-extrabold tracking-wide"
+            className="text-green-300 text-lg font-extrabold tracking-wide"
           >
             <h3>HEALTHLIFE</h3>
           </Link>
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center space-x-8 text-gray-700">
+          <div className="hidden md:flex items-center space-x-8 text-gray-300">
             <Link
               to="/"
-              className="hover:text-green-600 flex items-center gap-1"
+              className="hover:text-gray-200 flex items-center gap-1"
             >
               <FaHome /> Home
             </Link>
@@ -72,7 +72,7 @@ const Navbar = () => {
               onMouseEnter={() => setDropdown("programs")}
               onMouseLeave={() => setDropdown(null)}
             >
-              <button className="flex items-center gap-1 hover:text-green-600">
+              <button className="flex items-center gap-1 hover:text-gray-200">
                 <FaDumbbell /> Programs <FaChevronDown size={12} />
               </button>
               <AnimatePresence>
@@ -82,23 +82,23 @@ const Navbar = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.3 }}
-                    className="absolute bg-white shadow-lg rounded-lg py-3 mt-2 w-44"
+                    className="absolute bg-gray-900 shadow-lg rounded-lg py-3 mt-2 w-44"
                   >
                     <Link
                       to="/programspage"
-                      className="block px-4 py-2 hover:bg-green-100 transition"
+                      className="block px-4 py-2 hover:bg-gray-700 transition"
                     >
                       Beginner Yoga
                     </Link>
                     <Link
                       to="/workouts"
-                      className="block px-4 py-2 hover:bg-green-100 transition"
+                      className="block px-4 py-2 hover:bg-gray-700 transition"
                     >
                       Cardio Challenge
                     </Link>
                     <Link
                       to="/recipes"
-                      className="block px-4 py-2 hover:bg-green-100 transition"
+                      className="block px-4 py-2 hover:bg-gray-700 transition"
                     >
                       Healthy Eating
                     </Link>
@@ -113,7 +113,7 @@ const Navbar = () => {
               onMouseEnter={() => setDropdown("articles")}
               onMouseLeave={() => setDropdown(null)}
             >
-              <button className="flex items-center gap-1 hover:text-green-600">
+              <button className="flex items-center gap-1 hover:text-gray-300">
                 <FaNewspaper /> News <FaChevronDown size={12} />
               </button>
               <AnimatePresence>
@@ -123,23 +123,23 @@ const Navbar = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.3 }}
-                    className="absolute bg-white shadow-lg rounded-lg py-3 mt-2 w-44"
+                    className="absolute bg-gray-900 shadow-lg rounded-lg py-3 mt-2 w-44"
                   >
                     <Link
                       to="/newspage"
-                      className="block px-4 py-2 hover:bg-green-100 transition"
+                      className="block px-4 py-2 hover:bg-gray-700 transition"
                     >
                       Health News
                     </Link>
                     <Link
                       to="/blogpage"
-                      className="block px-4 py-2 hover:bg-green-100 transition"
+                      className="block px-4 py-2 hover:bg-gray-700 transition"
                     >
                       Blog Posts
                     </Link>
                     <Link
                       to="/trendingpage"
-                      className="block px-4 py-2 hover:bg-green-100 transition"
+                      className="block px-4 py-2 hover:bg-gray-700 transition"
                     >
                       Trending
                     </Link>
@@ -150,7 +150,7 @@ const Navbar = () => {
 
             <Link
               to="/contact"
-              className="hover:text-green-600 flex items-center gap-1"
+              className="hover:text-gray-200 flex items-center gap-1"
             >
               <FaEnvelope /> Contact
             </Link>
@@ -216,7 +216,7 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.5 }}
-              className="fixed top-0 right-0 h-screen w-full sm:w-[80%] md:w-[60%] bg-gray-900 z-50 p-6 flex flex-col overflow-y-auto"
+              className="fixed top-0 right-0 h-screen w-full sm:w-[80%] md:w-[60%] bg-gray-900 z-50 py-10 px-6 flex flex-col overflow-y-auto"
             >
               {/* Header */}
               <div className="flex justify-between items-center mb-6">
