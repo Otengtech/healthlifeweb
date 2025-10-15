@@ -52,9 +52,9 @@ const Navbar = () => {
       <div className="flex justify-between items-center w-full md:w-auto">
         <Link
           to="/"
-          className="text-green-700 text-2xl sm:text-3xl font-extrabold tracking-wider"
+          className="text-green-700 text-xl sm:text-2xl font-extrabold tracking-wider"
         >
-          HEALTHLIFE
+          <h3>HEALTHLIFE</h3>
         </Link>
 
         {/* Mobile Menu Toggle */}

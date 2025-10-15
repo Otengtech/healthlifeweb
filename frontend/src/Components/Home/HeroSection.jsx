@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const HeroSection = () => {
   return (
     <div
-      className="relative w-full min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[750px] bg-cover bg-center flex flex-col justify-center"
+      className="relative w-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[600px] bg-cover bg-center flex flex-col justify-center"
       style={{ backgroundImage: `url(${hero})` }}
     >
       {/* Overlay */}
@@ -52,7 +52,7 @@ const HeroSection = () => {
             ].map((aspect, idx) => (
               <motion.div
                 key={aspect.label}
-                className="flex flex-col items-center justify-center w-16 h-16 sm:w-24 sm:h-24 rounded-full backdrop-blur-sm border bg-green-300 text-gray-900 font-semibold text-sm sm:text-base cursor-pointer hover:bg-green-300/20 hover:text-green-100 transition-all duration-300"
+                className="flex flex-col items-center justify-center w-16 h-16 text-gray-100 font-semibold text-sm sm:text-base cursor-pointer hover:text-green-300 transition-all duration-300"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{
@@ -62,6 +62,7 @@ const HeroSection = () => {
                 }}
               >
                 <span className="mb-1">{aspect.icon}</span>
+                <span className="text-xs sm:text-sm">{aspect.label}</span>
               </motion.div>
             ))}
           </div>
