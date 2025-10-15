@@ -3,7 +3,7 @@ import RightWindow from "../../assets/rightwindow.jpg";
 import Sarah from "../../assets/Sarah-Gray.webp";
 import Gabbie from "../../assets/gabbie.webp";
 import Sarah2 from "../../assets/Sarah Gray2.webp";
-import Kate from "../../assets/kate Agnew.webp";
+import Kate from "../../assets/Kate Agnew.webp";
 import Simone from "../../assets/Simone.webp";
 import Workouts from "./Workouts";
 import RecipeSection from "./Recipe";

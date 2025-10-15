@@ -52,7 +52,7 @@ const HeroSection = () => {
             ].map((aspect, idx) => (
               <motion.div
                 key={aspect.label}
-                className="flex flex-col items-center justify-center w-16 h-16 text-gray-100 font-semibold text-sm sm:text-base cursor-pointer hover:text-green-300 transition-all duration-300"
+                className="flex flex-col items-center justify-center text-sm sm:text-base cursor-pointer hover:text-green-300 transition-all duration-300"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{
@@ -62,7 +62,7 @@ const HeroSection = () => {
                 }}
               >
                 <span className="mb-1">{aspect.icon}</span>
-                <span className="text-xs sm:text-sm">{aspect.label}</span>
+                <span >{aspect.label}</span>
               </motion.div>
             ))}
           </div>
