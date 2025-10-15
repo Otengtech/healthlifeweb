@@ -179,7 +179,7 @@ const Navbar = () => {
 
         {/* Hamburger for mobile */}
         <button
-          className="md:hidden text-gray-700 focus:outline-none"
+          className="md:hidden text-green-300 focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <FaTimes size={24} /> : <FaBars size={22} />}
@@ -239,7 +239,7 @@ const Navbar = () => {
                   onSubmit={handleSearch}
                   className="flex items-center"
                 >
-                  <FaSearch className="text-green-500 ml-2" />
+                  <FaSearch className="text-gray-700 ml-2" />
                   <input
                     type="text"
                     placeholder="Search for health tips, recipes..."
