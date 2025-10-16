@@ -10,6 +10,7 @@ import NewsPage from "./Pages/NewsPage";
 import TrendingPage from "./Pages/TrendingPage";
 import BlogPage from "./Pages/BlogPage";
 import HealthPrograms from "./Pages/HealthPrograms";
+import ExpertsPage from "./Pages/ExpertsPage";
 
 function App() {
 
@@ -32,8 +33,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/aboutpage" element={<AboutUsPage />} />
           <Route path="/newspage" element={<NewsPage />} />
-          <Route path="/blogpage" element={<BlogPage />} />
           <Route path="/programspage" element={<HealthPrograms />} />
+          <Route path="/expertpage" element={<ExpertsPage />} />
           <Route path="/trendingpage" element={<TrendingPage />} />
         </Routes>
 

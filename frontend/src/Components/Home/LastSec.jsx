@@ -8,6 +8,7 @@ import Simone from "../../assets/Simone.webp";
 import Workouts from "./Workouts";
 import RecipeSection from "./Recipe";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const LastSec = () => {
   const experts = [
@@ -59,16 +60,18 @@ const LastSec = () => {
           <h1 className="text-3xl md:text-5xl font-bold text-green-800">
             From Trusted Experts
           </h1>
-          <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+          <p className="text-gray-700 text-start text-sm md:text-base leading-relaxed">
             Healthylife was built alongside health experts to help ditch the
             complexity around health and make living healthier, easier. This
             means all of our health programs are based on science to bring you
             evidence-based information and guidance that you can trust.
           </p>
           <div>
-            <button className="py-3 px-6 bg-green-500 text-gray-900 rounded-lg hover:bg-green-400 transition duration-300">
-              Read More
-            </button>
+            <Link to="/expertpage">
+              <button className="py-3 px-6 bg-green-500 text-gray-900 hover:bg-green-400 transition duration-300">
+                Read More
+              </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -154,7 +157,7 @@ const LastSec = () => {
             </motion.div>
           ))}
         </div>
-        <button className="mt-8 py-3 px-6 bg-green-500 text-gray-900 rounded-md hover:bg-green-400 transition">
+        <button className="mt-8 py-3 px-6 bg-green-500 text-gray-900 hover:bg-green-400 transition">
           Go to Reviews
         </button>
       </section>
@@ -212,7 +215,7 @@ const LastSec = () => {
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <span className="bg-green-500 text-white rounded-full p-3 shadow-md flex-shrink-0">
+                <span className="bg-green-500 text-gray-700 rounded-full p-3 shadow-md flex-shrink-0">
                   <svg
                     width="24"
                     height="24"
@@ -238,10 +241,16 @@ const LastSec = () => {
               </motion.div>
             ))}
           </div>
-
-          <button className="my-8 py-3 px-6 bg-green-500 text-gray-700 hover:bg-green-400 transition duration-300">
-            Read More
-          </button>
+          <motion.div
+            className="flex items-start gap-4"
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <button className="my-8 py-3 px-6 bg-green-500 text-gray-700 hover:bg-green-400 transition duration-300">
+              Read More
+            </button>
+          </motion.div>
         </motion.div>
       </section>
 
