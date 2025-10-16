@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Apple from "../../assets/apple.webp";
 import Carrot from "../../assets/carrot.webp";
 import Lemon from "../../assets/balanced-diet.webp";
@@ -24,7 +24,6 @@ import {
 } from "react-icons/fa";
 
 const BlogPage = () => {
-  // Left Section: 10 Benefits of Fruits
   const fruits = [
     {
       icon: <FaAppleAlt className="text-green-600 text-3xl" />,
@@ -98,10 +97,17 @@ const BlogPage = () => {
     },
   ];
 
+  const [page, setPage] = useState(1);
+  const fruitsPerPage = 4;
+  const totalPages = Math.ceil(fruits.length / fruitsPerPage);
+
+  const start = (page - 1) * fruitsPerPage;
+  const currentFruits = fruits.slice(start, start + fruitsPerPage);
+
   return (
-    <div className="bg-gray-900 py-20 px-6 md:px-12">
+    <div className="bg-gray-900 py-14 px-6 md:px-12">
       <motion.h1
-        className="text-4xl font-bold text-center mb-12 text-green-400"
+        className="text-4xl font-bold text-center mb-6 text-green-400"
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -109,22 +115,26 @@ const BlogPage = () => {
         Trending Reads
       </motion.h1>
 
-      <div className="">
-        {/* Left Section: 10 Benefits of Fruits */}
-        <motion.div
-          initial={{ x: -80, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-2xl font-semibold mb-6 text-green-500 flex items-center gap-2">
-            10 Benefits of Fruits
-          </h2>
+      {/* Fruits Section with Pagination */}
+      <motion.div
+        initial={{ x: -80, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2 className="text-2xl font-semibold mb-6 text-green-500 flex items-center gap-2">
+          10 Benefits of Fruits
+        </h2>
 
-          <div className="grid grid-cols-4 gap-6">
-            {fruits.map((fruit, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <AnimatePresence mode="wait">
+            {currentFruits.map((fruit) => (
               <motion.div
-                key={index}
-                className="border border-gray-700 p-4 rounded-xl hover:shadow-lg bg-gray-800 transition"
+                key={fruit.name}
+                className="border border-gray-700 p-4 cursor-pointer rounded-xl hover:shadow-lg bg-gray-800 transition"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -40 }}
+                transition={{ duration: 0.5 }}
                 whileHover={{ scale: 1.05 }}
               >
                 <img
@@ -143,83 +153,106 @@ const BlogPage = () => {
                 </p>
               </motion.div>
             ))}
-          </div>
-        </motion.div>
+          </AnimatePresence>
+        </div>
 
-        {/* Right Section: Hair Repair + Exercise Life */}
+        {/* Pagination Controls */}
+        <div className="flex justify-center mt-6 gap-4">
+          <button
+            onClick={() => setPage((p) => Math.max(p - 1, 1))}
+            disabled={page === 1}
+            className="px-4 py-2 bg-green-700 text-white rounded-lg disabled:opacity-50"
+          >
+            Prev
+          </button>
+          <span className="text-gray-300 font-semibold">
+            Page {page} of {totalPages}
+          </span>
+          <button
+            onClick={() => setPage((p) => Math.min(p + 1, totalPages))}
+            disabled={page === totalPages}
+            className="px-4 py-2 bg-green-700 text-white rounded-lg disabled:opacity-50"
+          >
+            Next
+          </button>
+        </div>
+      </motion.div>
+
+      {/* Hair Repair + Exercise Sections */}
+      <motion.div
+        className="flex flex-col lg:flex-row items-start justify-between gap-10 mt-16"
+        initial={{ opacity: 0, y: 60 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        {/* Hair Repair Section */}
         <motion.div
-          className="space-y-10"
-          initial={{ x: 80, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex-1"
+          whileHover={{ scale: 1.02 }}
         >
-          {/* Hair Repair Section */}
-          <div className="flex items-center gap-10 mt-10">
-            <div className="border border-gray-200 rounded-2xl shadow-lg p-8">
-              <h2 className="text-2xl font-semibold mb-4 text-green-500 flex items-center gap-2">
-                <FaHandSparkles className="text-green-500" /> How to Repair Your
-                Hair
-              </h2>
-              <p className="text-gray-300 leading-relaxed text-sm md:text-base">
-                Hair damage can occur due to excessive heat, chemical
-                treatments, or poor diet. To repair your hair naturally:
-                <br />
-                <br />
-                <strong>Hydration:</strong> Drink enough water and use
-                moisturizing hair masks weekly.
-                <br />
-                <strong>Healthy Diet:</strong> Include biotin-rich foods like
-                eggs, nuts, and avocados.
-                <br />
-                <strong>Avoid Heat:</strong> Reduce frequent straightening or
-                blow-drying.
-                <br />
-                <strong>Use Natural Oils:</strong> Coconut oil, argan oil, and
-                aloe vera strengthen hair from roots.
-                <br />
-                Consistency is key — within 4–6 weeks, you’ll notice stronger,
-                shinier, and thicker hair growth.
-              </p>
-            </div>
+          <h2 className="text-2xl font-semibold mb-4 text-green-500 flex items-center gap-2">
+             How to Repair Your Hair
+          </h2>
+          <p className="text-gray-300 leading-relaxed text-sm md:text-base">
+            Hair damage can occur due to excessive heat, chemical treatments, or
+            poor diet. To repair your hair naturally:
+            <br />
+            <br />
+            <strong>Hydration:</strong> Drink enough water and use moisturizing
+            hair masks weekly.
+            <br />
+            <strong>Healthy Diet:</strong> Include biotin-rich foods like eggs,
+            nuts, and avocados.
+            <br />
+            <strong>Avoid Heat:</strong> Reduce frequent straightening or
+            blow-drying.
+            <br />
+            <strong>Use Natural Oils:</strong> Coconut oil, argan oil, and aloe
+            vera strengthen hair from roots.
+            <br />
+            Consistency is key — within 4–6 weeks, you’ll notice stronger,
+            shinier, and thicker hair growth.
+          </p>
+        </motion.div>
 
-            {/* Healthy Life by Exercising Section */}
-            <div className="border border-gray-200 rounded-2xl shadow-lg p-8">
-              <h2 className="text-2xl font-semibold mb-4 text-green-500 flex items-center gap-2">
-                <FaRunning className="text-green-500" /> Healthy Life by
-                Exercising
-              </h2>
-              <p className="text-gray-300 leading-relaxed text-sm md:text-base">
-                Exercise is the foundation of physical and mental well-being. A
-                consistent routine helps reduce stress, improve cardiovascular
-                health, and strengthen muscles.
-                <br />
-                <br />
-                <strong>Strength Training:</strong> Builds lean muscle and burns
-                fat efficiently.
-                <br />
-                <strong>Walking & Jogging:</strong> Boosts metabolism and heart
-                function.
-                <br />
-                <strong>Yoga & Meditation:</strong> Enhance flexibility and
-                reduce anxiety.
-                <br />
-                <strong>Improved Sleep:</strong> Physical activity regulates
-                hormones and helps deep rest.
-                <br />
-                <br />
-                Just 30 minutes a day can transform your lifestyle — promoting
-                happiness, confidence, and longevity.
-              </p>
-              <div className="flex gap-4 mt-4 text-green-600">
-                <FaDumbbell />
-                <FaHeart />
-                <FaLeaf />
-                <FaSpa />
-              </div>
-            </div>
+        {/* Healthy Life Section */}
+        <motion.div
+          className="flex-1"
+          whileHover={{ scale: 1.02 }}
+        >
+          <h2 className="text-2xl font-semibold mb-4 text-green-500 flex items-center gap-2">
+            Healthy Life by Exercising
+          </h2>
+          <p className="text-gray-300 leading-relaxed text-sm md:text-base">
+            Exercise is the foundation of physical and mental well-being. A
+            consistent routine helps reduce stress, improve cardiovascular
+            health, and strengthen muscles.
+            <br />
+            <br />
+            <strong>Strength Training:</strong> Builds lean muscle and burns fat
+            efficiently.
+            <br />
+            <strong>Walking & Jogging:</strong> Boosts metabolism and heart
+            function.
+            <br />
+            <strong>Yoga & Meditation:</strong> Enhance flexibility and reduce
+            anxiety.
+            <br />
+            <strong>Improved Sleep:</strong> Physical activity regulates hormones
+            and helps deep rest.
+            <br />
+            <br />
+            Just 30 minutes a day can transform your lifestyle — promoting
+            happiness, confidence, and longevity.
+          </p>
+          <div className="flex gap-4 mt-4 text-green-600">
+            <FaDumbbell />
+            <FaHeart />
+            <FaLeaf />
+            <FaSpa />
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </div>
   );
 };
