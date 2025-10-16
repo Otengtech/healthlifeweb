@@ -224,7 +224,7 @@ Benefits:
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -250, opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="md:w-1/4 w-full bg-gray-900 fixed md:relative h-screen md:h-auto shadow-lg z-20 p-6 border-r border-gray-700"
+            className="md:w-1/3 w-full bg-gray-900 fixed md:relative h-screen md:h-auto shadow-lg z-20 p-6 border-r border-gray-700"
           >
             {/* Close Button (Small Screens Only) */}
             <div className="flex justify-between items-center md:hidden mb-6">
@@ -241,7 +241,7 @@ Benefits:
               Health Programs
             </h2>
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 sm:gap-6">
               {Object.keys(programs).map((key) => (
                 <motion.button
                   key={key}

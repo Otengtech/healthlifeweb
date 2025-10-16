@@ -79,7 +79,7 @@ const RecipeSection = () => {
         transition={{ duration: 0.6, delay: 0.3 }}
       >
         <a
-          href="/recipes"
+          href="/recipepage"
           className="bg-green-500 text-gray-700 px-6 py-3 text-lg hover:bg-green-400 transition-all duration-300"
         >
           Go to Recipe →

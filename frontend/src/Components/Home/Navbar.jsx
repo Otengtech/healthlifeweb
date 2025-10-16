@@ -73,38 +73,8 @@ const Navbar = () => {
               onMouseLeave={() => setDropdown(null)}
             >
               <button className="flex items-center gap-1 hover:text-gray-200">
-                <FaDumbbell /> Programs <FaChevronDown size={12} />
+                <FaDumbbell /> <Link to="/programspage">Programs</Link>
               </button>
-              <AnimatePresence>
-                {dropdown === "programs" && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.3 }}
-                    className="absolute bg-gray-900 shadow-lg rounded-lg py-3 mt-2 w-44"
-                  >
-                    <Link
-                      to="/programspage"
-                      className="block px-4 py-2 hover:bg-gray-700 transition"
-                    >
-                      Beginner Yoga
-                    </Link>
-                    <Link
-                      to="/workouts"
-                      className="block px-4 py-2 hover:bg-gray-700 transition"
-                    >
-                      Cardio Challenge
-                    </Link>
-                    <Link
-                      to="/recipes"
-                      className="block px-4 py-2 hover:bg-gray-700 transition"
-                    >
-                      Healthy Eating
-                    </Link>
-                  </motion.div>
-                )}
-              </AnimatePresence>
             </div>
 
             {/* Dropdown - News/Blog */}

@@ -75,20 +75,20 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.5 }}
           >
-            <motion.Link to="contactpage"
+            <motion.a
               className="py-2 sm:py-3 px-5 sm:px-8 rounded-full font-bold shadow-lg transition transform hover:scale-105 focus:outline-none bg-green-300 text-gray-700"
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.96 }}
             >
-              Contact Us
-            </motion.Link>
+              <Link to="/contactpage">Contact Us</Link>
+            </motion.a>
             <motion.a
               href="#about"
               className="py-2 sm:py-3 px-5 sm:px-8 rounded-full font-bold shadow-lg transition transform hover:scale-105 focus:outline-none bg-green-300 text-gray-700"
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.96 }}
             >
-              About Us
+              <Link to="/aboutpage">About Us</Link>
             </motion.a>
           </motion.div>
         </motion.div>

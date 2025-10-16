@@ -11,6 +11,10 @@ import TrendingPage from "./Pages/TrendingPage";
 import BlogPage from "./Pages/BlogPage";
 import HealthPrograms from "./Pages/HealthPrograms";
 import ExpertsPage from "./Pages/ExpertsPage";
+import ReviewsPage from "./Pages/ReviewsPage";
+import WorkoutsPage from "./Pages/WorkoutsPage";
+import RecipePage from "./Pages/RecipePage";
+import PageTransition from "./Home/PageTransition";
 
 function App() {
 
@@ -27,6 +31,7 @@ function App() {
   return (
       <div className="bg-white min-h-screen flex flex-col">
         <Navbar />
+        <PageTransition />
 
         {/* Define all routes here */}
         <Routes>
@@ -34,6 +39,9 @@ function App() {
           <Route path="/aboutpage" element={<AboutUsPage />} />
           <Route path="/blogpage" element={<BlogPage />} />
           <Route path="/newspage" element={<NewsPage />} />
+          <Route path="/reviewpage" element={<ReviewsPage />} />
+          <Route path="/recipepage" element={<RecipePage />} />
+          <Route path="/workoutspage" element={<WorkoutsPage />} />
           <Route path="/programspage" element={<HealthPrograms />} />
           <Route path="/expertpage" element={<ExpertsPage />} />
           <Route path="/trendingpage" element={<TrendingPage />} />

@@ -158,7 +158,7 @@ const LastSec = () => {
           ))}
         </div>
         <button className="mt-8 py-3 px-6 bg-green-500 text-gray-900 hover:bg-green-400 transition">
-          Go to Reviews
+          <Link to="/reviewpage">Go to Reviews</Link>
         </button>
       </section>
 
@@ -241,16 +241,6 @@ const LastSec = () => {
               </motion.div>
             ))}
           </div>
-          <motion.div
-            className="flex items-start gap-4"
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <button className="my-8 py-3 px-6 bg-green-500 text-gray-700 hover:bg-green-400 transition duration-300">
-              Read More
-            </button>
-          </motion.div>
         </motion.div>
       </section>
 

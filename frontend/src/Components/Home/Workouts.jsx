@@ -4,6 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 import tricepdips from "../../assets/tricepdips.webp";
 import Yoga from "../../assets/yoga.webp";
 import Lunges from "../../assets/lunges.webp";
+import { Link } from "react-router-dom";
 
 const Workouts = () => {
   const workouts = [
@@ -67,7 +68,7 @@ const Workouts = () => {
       {/* Button */}
       <div className="flex justify-center">
         <button className="flex items-center mt-10 gap-2 px-6 py-3 bg-green-500 text-gray-800 hover:bg-green-400 transition duration-300">
-          To Workouts <FaArrowRight />
+          <Link to="/workoutspage">To Workouts</Link> <FaArrowRight />
         </button>
       </div>
     </div>

@@ -65,11 +65,11 @@ const Footer = () => {
           <ul className="space-y-2 text-sm">
             {[
               { name: "Home", path: "/" },
-              { name: "About Us", path: "/about" },
-              { name: "Services", path: "/services" },
-              { name: "Shop", path: "/shop" },
-              { name: "Contact", path: "/contact" },
-              { name: "Privacy Policy", path: "/privacy" },
+              { name: "About Us", path: "/aboutuspage" },
+              { name: "Programs", path: "/programspage" },
+              { name: "Blog", path: "/blogpage" },
+              { name: "Contact", path: "/contactuspage" },
+              { name: "Health News", path: "/newspage" },
             ].map((link) => (
               <li key={link.name}>
                 <Link

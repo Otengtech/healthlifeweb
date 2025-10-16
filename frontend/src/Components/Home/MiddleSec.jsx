@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import BicycleEx from "../../assets/bicyclecrunches.webp";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const MiddleSec = () => {
   const [activeTab, setActiveTab] = useState("trending");
@@ -9,45 +9,55 @@ const MiddleSec = () => {
   const trendingReads = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
+      image:
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
       category: "Nutrition",
       title: "10 Benefits of Fruits",
-      description: "Discover the top health benefits of adding more fruits to your daily diet.",
+      description:
+        "Discover the top health benefits of adding more fruits to your daily diet.",
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80",
+      image:
+        "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80",
       category: "Hair Care",
       title: "How to Repair Your Hair",
-      description: "Learn effective tips and tricks to restore your hair's natural shine and strength.",
+      description:
+        "Learn effective tips and tricks to restore your hair's natural shine and strength.",
     },
     {
       id: 3,
       image: BicycleEx,
       category: "Fitness",
       title: "Healthy Life by Exercising",
-      description: "Explore how regular exercise can transform your health and wellbeing.",
+      description:
+        "Explore how regular exercise can transform your health and wellbeing.",
     },
   ];
 
   const healthPrograms = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+      image:
+        "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
       category: "Program",
       title: "Beginner Yoga",
-      description: "Start your wellness journey with our beginner-friendly yoga program.",
+      description:
+        "Start your wellness journey with our beginner-friendly yoga program.",
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80",
+      image:
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80",
       category: "Program",
       title: "Healthy Eating Plan",
-      description: "Personalized meal plans to help you eat healthier every day.",
+      description:
+        "Personalized meal plans to help you eat healthier every day.",
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
+      image:
+        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
       category: "Program",
       title: "Cardio Challenge",
       description: "Boost your stamina with our 30-day cardio challenge.",
@@ -55,7 +65,7 @@ const MiddleSec = () => {
   ];
 
   const tabs = [
-    { key: "trending", label: "Trending Reads" },
+    { key: "trending", label: "Health Blogs" },
     { key: "programs", label: "Health Programs" },
   ];
 
@@ -74,7 +84,7 @@ const MiddleSec = () => {
 
         {/* Tabs */}
         <div className="flex justify-center gap-6 sm:gap-10 border-b-2 border-green-100 mb-8 flex-wrap">
-          {tabs.map(tab => (
+          {tabs.map((tab) => (
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
@@ -105,10 +115,13 @@ const MiddleSec = () => {
               transition={{ duration: 0.4 }}
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10"
             >
-              {trendingReads.map(card => (
+              {trendingReads.map((card) => (
                 <motion.div
                   key={card.id}
-                  whileHover={{ scale: 1.03, boxShadow: "0 8px 24px rgba(0,0,0,0.1)" }}
+                  whileHover={{
+                    scale: 1.03,
+                    boxShadow: "0 8px 24px rgba(0,0,0,0.1)",
+                  }}
                   className="bg-gray-800 cursor-pointer rounded-2xl overflow-hidden shadow-md flex flex-col transition-transform"
                 >
                   <div className="relative">
@@ -152,10 +165,13 @@ const MiddleSec = () => {
               transition={{ duration: 0.4 }}
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10"
             >
-              {healthPrograms.map(card => (
+              {healthPrograms.map((card) => (
                 <motion.div
                   key={card.id}
-                  whileHover={{ scale: 1.03, boxShadow: "0 8px 24px rgba(0,0,0,0.1)" }}
+                  whileHover={{
+                    scale: 1.03,
+                    boxShadow: "0 8px 24px rgba(0,0,0,0.1)",
+                  }}
                   className="bg-white rounded-2xl overflow-hidden shadow-md flex flex-col"
                 >
                   <div className="relative">
@@ -178,8 +194,8 @@ const MiddleSec = () => {
                     <p className="text-gray-600 text-sm sm:text-base mb-4 flex-1 leading-relaxed">
                       {card.description}
                     </p>
-                    <button className="mt-auto bg-green-500 text-gray-900 text-sm sm:text-base px-4 py-2 hover:bg-green-400 transition font-medium">
-                      Read More
+                    <button className="mt-auto bg-green-500 text-gray-900 text-sm sm:text-base px-4 py-3 hover:bg-green-400 transition font-medium">
+                      <Link to="/programspage">Read More</Link>
                     </button>
                   </div>
                 </motion.div>
