@@ -2,6 +2,7 @@ import React from "react";
 import hero from "../../assets/hero.jpg";
 import { FaAppleAlt, FaDumbbell, FaBrain, FaBed, FaTint } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -74,14 +75,13 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.5 }}
           >
-            <motion.a
-              href="#services"
+            <motion.Link to="contactpage"
               className="py-2 sm:py-3 px-5 sm:px-8 rounded-full font-bold shadow-lg transition transform hover:scale-105 focus:outline-none bg-green-300 text-gray-700"
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.96 }}
             >
               Contact Us
-            </motion.a>
+            </motion.Link>
             <motion.a
               href="#about"
               className="py-2 sm:py-3 px-5 sm:px-8 rounded-full font-bold shadow-lg transition transform hover:scale-105 focus:outline-none bg-green-300 text-gray-700"

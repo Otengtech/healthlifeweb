@@ -133,9 +133,9 @@ const TrendingPage = () => {
 
 
   return (
-    <div className="bg-gray-50 min-h-screen px-6 md:px-12 py-10">
-      <h2 className="text-4xl font-bold text-center mb-6 text-gray-800">
-        Trending Health News
+    <div className="bg-gray-900 min-h-screen px-6 md:px-12 py-10">
+      <h2 className="text-4xl font-bold text-center mb-6 text-green-400">
+        What is Trending
       </h2>
 
       {/* Search Bar */}
@@ -143,7 +143,7 @@ const TrendingPage = () => {
         <input
           type="text"
           placeholder="Search health topics..."
-          className="bg-gray-200 rounded-l-full px-6 py-2 w-72 focus:outline-none"
+          className="bg-gray-200 rounded-l-full px-6 py-3 w-72 focus:outline-none"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
@@ -163,25 +163,25 @@ const TrendingPage = () => {
           {filtered.map((news, i) => (
             <div
               key={i}
-              className="bg-white shadow-lg rounded-xl cursor-pointer overflow-hidden hover:shadow-2xl transition duration-300"
+              className="bg-gray-800 shadow-lg rounded-xl cursor-pointer overflow-hidden hover:shadow-2xl transition duration-300"
             >
               <img src={news.image} alt={news.title} className="w-full h-48 object-cover" />
               <div className="p-5">
-                <h1 className="text-xl font-semibold mb-2 text-green-700">
+                <h1 className="text-xl font-semibold mb-2 text-green-400">
                   {news.title}
                 </h1>
-                <p className="text-gray-800 text-sm mb-3">{news.date}</p>
-                <p className="text-gray-600 mb-4 text-sm">{news.summary}</p>
+                <p className="text-gray-400 text-sm mb-3">{news.date}</p>
+                <p className="text-gray-300 mb-4 text-sm">{news.summary}</p>
 
                 {/* Social Media + Views */}
                 <div className="flex justify-between text-gray-500 text-sm border-t pt-3">
-                  <div className="flex items-center gap-2">
-                    <FaEye /> {news.views.toLocaleString()} views
+                  <div className="flex items-center text-gray-400 gap-2">
+                    <FaEye className="text-green-400 text-xl"/> {news.views.toLocaleString()} views
                   </div>
-                  <div className="flex items-center gap-3">
-                    <FaHeart /> {news.likes}
-                    <FaCommentDots /> {news.comments}
-                    <FaShareAlt /> {news.shares}
+                  <div className="flex items-center text-gray-400 gap-3">
+                    <FaHeart className="text-green-400 text-xl"/> {news.likes}
+                    <FaCommentDots className="text-green-400 text-xl"/> {news.comments}
+                    <FaShareAlt className="text-green-400 text-xl"/> {news.shares}
                   </div>
                 </div>
               </div>
