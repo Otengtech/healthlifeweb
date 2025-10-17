@@ -15,6 +15,7 @@ import ReviewsPage from "./Pages/ReviewsPage";
 import WorkoutsPage from "./Pages/WorkoutsPage";
 import RecipePage from "./Pages/RecipePage";
 import PageTransition from "./Home/PageTransition";
+import HealthQuiz from "./Pages/QuizPage";
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
           <Route path="/programspage" element={<HealthPrograms />} />
           <Route path="/expertpage" element={<ExpertsPage />} />
           <Route path="/trendingpage" element={<TrendingPage />} />
+          <Route path="/quizpage" element={<HealthQuiz />} />
         </Routes>
 
         <Footer />
