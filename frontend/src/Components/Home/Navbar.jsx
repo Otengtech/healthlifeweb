@@ -55,7 +55,7 @@ const Navbar = () => {
             to="/"
             className="text-green-300 text-lg font-extrabold tracking-wide"
           >
-            <h3>HEALTHLIFE</h3>
+            <h1>HEALTHLIFE</h1>
           </Link>
           {/* Desktop Links */}
           <div className="hidden md:flex items-center space-x-8 text-gray-300">

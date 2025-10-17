@@ -123,9 +123,9 @@ const TopSec = () => {
         <div className="w-full lg:w-6/12 flex flex-col items-center">
           <motion.h2
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-green-600 mb-6 text-center"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             Healthy Foods
           </motion.h2>
@@ -134,10 +134,9 @@ const TopSec = () => {
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.6 }}
+                initial={{ x: -100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
                 className="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden"
               >
                 <div className="md:w-1/2 p-6 flex flex-col justify-center">
@@ -188,15 +187,17 @@ const TopSec = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={currentNewsIndex}
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -40 }}
-              transition={{ duration: 0.5 }}
+              initial={{ x: 100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               className="flex flex-col gap-6 w-full"
             >
               {visibleNews.map((news, i) => (
                 <motion.div
                   key={i}
+                  initial={{ x: 100, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
                   className="bg-white p-4 rounded-xl shadow hover:shadow-lg transition-shadow duration-300"
                 >
                   <div className="flex items-center gap-3 mb-2">
@@ -283,7 +284,9 @@ const TopSec = () => {
               <h1 className="text-xl text-start font-semibold text-green-500 mb-3">
                 {item.title}
               </h1>
-              <p className="text-gray-200 text-start text-sm sm:text-base">{item.text}</p>
+              <p className="text-gray-200 text-start text-sm sm:text-base">
+                {item.text}
+              </p>
             </motion.div>
           ))}
         </div>

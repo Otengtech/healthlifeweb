@@ -76,7 +76,7 @@ const HeroSection = () => {
             transition={{ delay: 1, duration: 0.5 }}
           >
             <motion.a
-              className="py-2 sm:py-3 px-5 sm:px-8 rounded-full font-bold shadow-lg transition transform hover:scale-105 focus:outline-none bg-green-300 text-gray-700"
+              className="py-3 sm:py-3 px-5 sm:px-8 rounded-full font-bold shadow-lg transition transform hover:scale-105 focus:outline-none bg-green-300 text-gray-700"
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.96 }}
             >
@@ -84,7 +84,7 @@ const HeroSection = () => {
             </motion.a>
             <motion.a
               href="#about"
-              className="py-2 sm:py-3 px-5 sm:px-8 rounded-full font-bold shadow-lg transition transform hover:scale-105 focus:outline-none bg-green-300 text-gray-700"
+              className="py-3 sm:py-3 px-5 sm:px-8 rounded-full font-bold shadow-lg transition transform hover:scale-105 focus:outline-none bg-green-300 text-gray-700"
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.96 }}
             >

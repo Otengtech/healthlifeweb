@@ -166,9 +166,9 @@ const RecipePage = () => {
       {/* Header */}
       <motion.h1
         className="text-4xl md:text-5xl font-bold text-center text-green-400 mb-8"
-        initial={{ opacity: 0, y: -40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
       >
         Explore Delicious Recipes
       </motion.h1>
@@ -176,9 +176,9 @@ const RecipePage = () => {
       {/* Category Filters */}
       <motion.div
         className="flex flex-wrap justify-center gap-3"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
+        initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
       >
         {categories.map((cat) => (
           <button
@@ -200,13 +200,16 @@ const RecipePage = () => {
         {filteredRecipes.map((recipe) => (
           <motion.div
             key={recipe.id}
-            className="bg-gray-800 border border-green-500 rounded-xl p-6 shadow-lg hover:shadow-green-500/20 transition cursor-pointer group"
+            className="bg-gray-700 p-6 rounded-lg hover:shadow-green-500/20 transition cursor-pointer group"
             whileHover={{ scale: 1.05 }}
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <img
               src={recipe.image}
               alt={recipe.name}
-              className="w-full h-40 object-cover rounded-lg mb-4"
+              className="w-full h-48 object-cover rounded-lg mb-4"
             />
             <div className="flex items-center justify-between mb-3">
               <h3 className="text-xl font-semibold text-green-400">
@@ -219,7 +222,7 @@ const RecipePage = () => {
             </p>
             <button
               onClick={() => startRecipe(recipe)}
-              className="px-4 py-2 text-sm border border-green-400 rounded-lg hover:bg-green-500 hover:text-gray-900 transition"
+              className="px-4 py-3 text-sm rounded-lg bg-green-500 hover:bg-green-400 text-gray-800 transition"
             >
               Start Cooking
             </button>
@@ -265,13 +268,13 @@ const RecipePage = () => {
       <AnimatePresence>
         {selectedRecipe && (
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 p-6 sm:p-10 overflow-y-auto"
+            className="fixed inset-0 bg-black bg-opacity-90 flex justify-center items-center z-40 sm:p-10 overflow-y-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="bg-gray-800 border border-green-500 rounded-2xl p-6 sm:p-10 w-full max-w-4xl text-center relative shadow-lg flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
+              className="bg-gray-800 pt-20 sm:pt-0 p-6 sm:p-10 w-full max-w-4xl text-center relative shadow-lg flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
@@ -279,7 +282,7 @@ const RecipePage = () => {
               {/* Close Button */}
               <button
                 onClick={closeModal}
-                className="absolute top-4 right-4 text-gray-400 hover:text-red-400"
+                className="absolute top-4 right-4 text-gray-400 hover:text-green-400"
               >
                 <FaTimes size={22} />
               </button>
@@ -289,7 +292,7 @@ const RecipePage = () => {
                 <img
                   src={selectedRecipe.image}
                   alt={selectedRecipe.name}
-                  className="w-full max-h-72 object-cover rounded-lg border border-green-500 shadow-lg"
+                  className="w-full max-h-80 object-cover rounded-lg"
                 />
               </div>
 

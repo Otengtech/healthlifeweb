@@ -227,9 +227,9 @@ const WorkoutsPage = () => {
       {/* Header */}
       <motion.h1
         className="text-4xl md:text-5xl font-bold text-center text-green-400 mb-8"
-        initial={{ opacity: 0, y: -40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         Explore Workouts
       </motion.h1>
@@ -237,9 +237,9 @@ const WorkoutsPage = () => {
       {/* Category Filters */}
       <motion.div
         className="flex flex-wrap justify-center gap-3"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         {categories.map((cat) => (
           <button
@@ -264,13 +264,16 @@ const WorkoutsPage = () => {
         {filteredWorkouts.map((workout) => (
           <motion.div
             key={workout.id}
-            className="bg-gray-800 border border-green-500 rounded-xl p-6 shadow-lg hover:shadow-green-500/20 transition cursor-pointer group"
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="bg-gray-700 rounded-xl p-6 shadow-lg hover:shadow-green-500/20 transition cursor-pointer group"
             whileHover={{ scale: 1.05 }}
           >
             <img
               src={workout.image}
               alt={workout.name}
-              className="w-full h-40 object-cover rounded-lg mb-4"
+              className="w-full h-48 object-cover rounded-lg mb-4"
             />
             <div className="flex items-center justify-between mb-3">
               <h3 className="text-xl font-semibold text-green-400">
@@ -283,7 +286,7 @@ const WorkoutsPage = () => {
             </p>
             <button
               onClick={() => startWorkout(workout)}
-              className="px-4 py-2 text-sm border border-green-400 rounded-lg hover:bg-green-500 hover:text-gray-900 transition"
+              className="px-4 py-2 text-sm bg-green-500 rounded-full hover:bg-green-400 text-gray-800 transition"
             >
               Start Workout
             </button>
@@ -294,9 +297,9 @@ const WorkoutsPage = () => {
       {/* Random Workout Generator */}
       <motion.div
         className="bg-gray-800 rounded-xl p-8 text-center border border-green-500 max-w-3xl mx-auto"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <h2 className="text-2xl font-bold text-green-400 mb-4 flex justify-center items-center gap-2">
           <FaRandom /> Random Workout Generator
@@ -312,8 +315,9 @@ const WorkoutsPage = () => {
           <motion.div
             key={randomWorkout.id}
             className="mt-4 p-4 border border-green-500 rounded-lg bg-gray-900"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <p className="text-lg text-green-300 font-semibold">
               {randomWorkout.name}
@@ -330,32 +334,34 @@ const WorkoutsPage = () => {
       <AnimatePresence>
         {selectedWorkout && (
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 p-6 sm:p-10 overflow-y-auto"
+            className="fixed inset-0 z-40 flex justify-center items-center bg-black bg-opacity-90  overflow-y-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            
           >
             <motion.div
-              className="bg-gray-800 border border-green-500 rounded-2xl p-6 sm:p-10 w-full max-w-4xl text-center relative shadow-lg flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
-              initial={{ scale: 0.8, opacity: 0 }}
+              className="bg-gray-800 p-6 sm:p-8 w-full max-w-5xl text-center relative shadow-lg flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
+              initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
+              exit={{ scale: 0.9, opacity: 0 }}
               layout
             >
               {/* Close Button */}
               <button
                 onClick={closeModal}
-                className="absolute top-4 right-4 text-gray-400 hover:text-red-400"
+                className="absolute top-4 right-4 text-gray-400 hover:text-green-400"
               >
                 <FaTimes size={22} />
               </button>
 
               {/* Left Section — Image */}
-              <div className="w-full lg:w-1/2 flex justify-center items-center">
+              <div className="w-full pt-20 sm:pt-0 lg:w-1/2 flex justify-center items-center">
                 <img
                   src={selectedWorkout.image}
                   alt={selectedWorkout.name}
-                  className="w-full max-h-72 object-cover rounded-lg border border-green-500 shadow-lg"
+                  className="w-full max-h-72 sm:max-h-96 object-cover rounded-lg"
                 />
               </div>
 

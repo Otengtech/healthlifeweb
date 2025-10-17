@@ -75,7 +75,7 @@ const MiddleSec = () => {
         {/* Section Title */}
         <motion.h2
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-green-500 mb-10"
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
@@ -87,6 +87,9 @@ const MiddleSec = () => {
           {tabs.map((tab) => (
             <button
               key={tab.key}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
               onClick={() => setActiveTab(tab.key)}
               className={`relative pb-2 text-base sm:text-lg md:text-lg font-semibold transition-colors ${
                 activeTab === tab.key ? "text-green-500" : "text-gray-300"
@@ -109,15 +112,17 @@ const MiddleSec = () => {
           {activeTab === "trending" && (
             <motion.div
               key="trending"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -30 }}
-              transition={{ duration: 0.4 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10"
             >
               {trendingReads.map((card) => (
                 <motion.div
                   key={card.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
                   whileHover={{
                     scale: 1.03,
                     boxShadow: "0 8px 24px rgba(0,0,0,0.1)",

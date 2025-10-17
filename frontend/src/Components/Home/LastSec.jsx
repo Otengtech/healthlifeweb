@@ -57,66 +57,34 @@ const LastSec = () => {
 
         {/* Text */}
         <div className="w-full md:w-1/2 flex flex-col space-y-5 text-center md:text-left">
-          <h1 className="text-3xl md:text-5xl font-bold text-green-800">
+          <motion.h1
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-3xl md:text-5xl font-bold text-green-800">
             From Trusted Experts
-          </h1>
-          <p className="text-gray-700 text-start text-sm md:text-base leading-relaxed">
+          </motion.h1>
+          <motion.p
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-gray-700 text-start text-sm md:text-base leading-relaxed">
             Healthylife was built alongside health experts to help ditch the
             complexity around health and make living healthier, easier. This
             means all of our health programs are based on science to bring you
             evidence-based information and guidance that you can trust.
-          </p>
-          <div>
+          </motion.p>
+          <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <Link to="/expertpage">
               <button className="py-3 px-6 bg-green-500 text-gray-900 hover:bg-green-400 transition duration-300">
                 Read More
               </button>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 2: Meet Experts */}
-      <section className="w-full h-full py-12 flex flex-col items-center justify-center">
-        <h1 className="text-3xl md:text-4xl font-semibold text-green-800 mb-10">
-          Meet Our Experts
-        </h1>
-
-        {/* Container: Scroll horizontally on small screens, grid on large */}
-        <div
-          className="
-      flex sm:grid 
-      sm:grid-cols-2 lg:grid-cols-4 
-      gap-6 md:gap-8 
-      overflow-x-auto sm:overflow-x-visible 
-      px-6 md:px-12 
-      w-full
-      scrollbar-hide
-    "
-        >
-          {experts.map((expert, idx) => (
-            <motion.div
-              key={idx}
-              whileHover={{ scale: 1.03 }}
-              className="
-          bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 
-          flex-shrink-0 w-72 sm:w-auto
-        "
-            >
-              <img
-                src={expert.image}
-                alt={expert.name}
-                className="object-cover w-full h-56 rounded-t-lg"
-              />
-              <div className="p-4 text-center md:text-left">
-                <div className="text-green-700 font-semibold text-lg">
-                  {expert.name}
-                </div>
-                <div className="text-gray-500 text-sm mb-2">{expert.role}</div>
-                <p className="text-gray-600 text-sm">{expert.details}</p>
-              </div>
-            </motion.div>
-          ))}
+          </motion.div>
         </div>
       </section>
 
@@ -140,6 +108,9 @@ const LastSec = () => {
           ].map((testimonial, idx) => (
             <motion.div
               key={idx}
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               whileHover={{ scale: 1.02 }}
               className="bg-white rounded-lg shadow-md p-8 flex flex-col items-start md:items-center gap-4 transition-all duration-300 hover:shadow-lg"
             >
@@ -157,9 +128,14 @@ const LastSec = () => {
             </motion.div>
           ))}
         </div>
-        <button className="mt-8 py-3 px-6 bg-green-500 text-gray-900 hover:bg-green-400 transition">
+        <motion.button
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mt-8 py-3 px-6 bg-green-500 text-gray-900 hover:bg-green-400 transition"
+        >
           <Link to="/reviewpage">Go to Reviews</Link>
-        </button>
+        </motion.button>
       </section>
 
       {/* Section 4: Why Workouts Matter */}
