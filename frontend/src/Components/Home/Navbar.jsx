@@ -203,7 +203,7 @@ const Navbar = () => {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
-                className="bg-gray-100 rounded-full py-4 px-6 mb-6"
+                className="bg-gray-100 rounded-full py-3 px-6 mb-6"
               >
                 <form
                   onSubmit={handleSearch}

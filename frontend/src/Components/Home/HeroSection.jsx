@@ -24,9 +24,9 @@ const HeroSection = () => {
           {/* Title */}
           <motion.h1
             className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-green-300 mb-4 drop-shadow-lg leading-tight"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             Welcome to HealthLife
           </motion.h1>
@@ -34,9 +34,9 @@ const HeroSection = () => {
           {/* Description */}
           <motion.p
             className="text-base sm:text-lg md:text-xl text-gray-100 mb-6 leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             Your journey to a healthier life starts here. Discover and explore
             everything you need to live your best, most vibrant self.
@@ -77,16 +77,18 @@ const HeroSection = () => {
           >
             <motion.a
               className="py-3 sm:py-3 px-5 sm:px-8 rounded-full font-bold shadow-lg transition transform hover:scale-105 focus:outline-none bg-green-300 text-gray-700"
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.96 }}
+              initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <Link to="/contactpage">Contact Us</Link>
             </motion.a>
             <motion.a
               href="#about"
               className="py-3 sm:py-3 px-5 sm:px-8 rounded-full font-bold shadow-lg transition transform hover:scale-105 focus:outline-none bg-green-300 text-gray-700"
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.96 }}
+              initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <Link to="/aboutpage">About Us</Link>
             </motion.a>
