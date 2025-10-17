@@ -17,6 +17,7 @@ import {
   FaPhone,
   FaVoicemail,
   FaLightbulb,
+  FaTools,
 } from "react-icons/fa";
 
 const Navbar = () => {
@@ -65,6 +66,8 @@ const Navbar = () => {
           </Link>
           <Link to="/quizpage" className="flex sm:hidden font-bold items-center text-green-300">
           <FaLightbulb/>Quiz</Link>
+          <Link to="/toolpage" className="flex sm:hidden font-bold items-center text-green-300">
+          <FaTools/>Tools</Link>
           {/* Desktop Links */}
           <div className="hidden md:flex items-center space-x-8 text-gray-300">
             <Link

@@ -76,7 +76,8 @@ const HealthQuiz = () => {
     score >= 4 ? "Excellent" : score >= 2 ? "Good" : "Needs Improvement";
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-900 text-white p-4">
+    <div className="flex flex-col justify-center items-center bg-gray-900 text-white px-4 pb-20 pt-10">
+        <div className="text-green-500 text-2xl font-bold md:text-4xl mb-4">Short Quiz</div>
       <motion.div
         className="bg-gray-800 rounded-2xl p-6 sm:p-10 max-w-xl w-full shadow-lg"
         initial={{ opacity: 0, y: 40 }}
