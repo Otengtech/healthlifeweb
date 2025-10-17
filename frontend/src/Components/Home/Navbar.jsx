@@ -12,6 +12,10 @@ import {
   FaBlog,
   FaHome,
   FaEnvelope,
+  FaInfo,
+  FaBookOpen,
+  FaPhone,
+  FaVoicemail,
 } from "react-icons/fa";
 
 const Navbar = () => {
@@ -48,6 +52,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-gray-900 sticky top-0 z-50 shadow-md">
+      <p className="p-2 bg-gray-200 text-gray-800 text-end flex justify-end items-center gap-2">Hotline: +233593957373</p>
       <div className="flex justify-between items-center px-6 md:px-12 py-4">
         <div className="flex items-center gap-10">
           {/* Brand */}
@@ -244,7 +249,9 @@ const Navbar = () => {
                     to: "/trendingpage",
                     icon: <FaDumbbell />,
                   },
-                  { label: "Contact", to: "/contactpage", icon: <FaEnvelope/> },
+                  { label: "Reviews", to: "/reviewpage", icon: <FaBookOpen/> },
+                  { label: "Contact Us", to: "/contactpage", icon: <FaEnvelope/> },
+                  { label: "About Us", to: "/aboutuspage", icon: <FaInfo/> },
                 ].map((item, i) => (
                   <motion.div
                     key={item.to}
