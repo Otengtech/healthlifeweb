@@ -27,7 +27,7 @@ const HeroSection = () => {
   return (
     <div className="w-full flex flex-col">
       {/* HERO SECTION */}
-      <div className="relative w-full min-h-[90vh] flex flex-col justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-green-700 to-emerald-400">
+      <div className="relative w-full min-h-[90vh] flex flex-col justify-center overflow-hidden bg-gradient-to-br from-gray-800 via-green-700 to-emerald-400">
         <section className="relative z-10 flex flex-col lg:flex-row items-center justify-between px-6 sm:px-12 md:px-20 lg:px-28 py-16 md:py-20">
           
           {/* LEFT CONTENT */}
@@ -54,19 +54,20 @@ const HeroSection = () => {
             >
               Discover balance and vitality through mindful living — nutrition,
               fitness, hydration, and rest working together to create your
-              healthiest self.
+              healthiest self. Explore more to discover the right ways to a healthy life.
+              You will find all the answers to your health questions.
             </motion.p>
 
-            <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+            <div className="flex flex-wrap gap-4 justify-start lg:justify-start">
               <Link
                 to="/contactpage"
-                className="py-3 px-6 rounded-full font-semibold bg-gray-900 text-green-300 hover:bg-gray-800 transition-transform hover:scale-105"
+                className="py-4 px-6 font-semibold bg-gray-900 text-green-300 hover:bg-gray-800 transition-transform hover:scale-105"
               >
                 Contact Us
               </Link>
               <Link
                 to="/aboutpage"
-                className="py-3 px-6 rounded-full font-semibold bg-gray-900 text-green-300 hover:bg-gray-800 transition-transform hover:scale-105"
+                className="py-4 px-6 font-semibold bg-gray-900 text-green-300 hover:bg-gray-800 transition-transform hover:scale-105"
               >
                 About Us
               </Link>
@@ -82,11 +83,11 @@ const HeroSection = () => {
           >
             {isMobile ? (
               // 📱 MOBILE: Horizontal bouncing icons
-              <div className="flex gap-6">
+              <div className="flex gap-4">
                 {orbitIcons.map((item, idx) => (
                   <motion.div
                     key={item.label}
-                    className="flex items-center justify-center rounded-full text-green-300 bg-gray-900 shadow-lg"
+                    className="flex items-center justify-center rounded-full backdrop-sm text-green-300 bg-gray-900 shadow-lg"
                     style={{
                       width: 60,
                       height: 60,
@@ -101,7 +102,7 @@ const HeroSection = () => {
                       delay: idx * 0.3,
                       ease: "easeInOut",
                     }}
-                    whileHover={{ scale: 1.3 }}
+                    whileHover={{ scale: 1.6 }}
                   >
                     {item.icon}
                   </motion.div>
