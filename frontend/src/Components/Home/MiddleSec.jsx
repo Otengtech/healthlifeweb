@@ -12,7 +12,7 @@ const MiddleSec = () => {
       image:
         "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
       category: "Nutrition",
-      title: "10 Benefits of Fruits",
+      title: "5 top Benefits of Fruits",
       description:
         "Discover the top health benefits of adding more fruits to your daily diet.",
     },

@@ -18,6 +18,12 @@ import PageTransition from "./Home/PageTransition";
 import HealthQuiz from "./Pages/QuizPage";
 import HealthTools from "./Pages/ToolPage";
 import FoodPage from "./Pages/FoodPage";
+import VegetablePage from "./Pages/VegetablePage";
+import FruitPage from "./Pages/FruitPage";
+import ProteinPage from "./Pages/ProteinPage";
+import HerbsPage from "./Pages/HerbsPage";
+import BeveragePage from "./Pages/BeveragePage";
+import ContactPage from "./Pages/ContactPage";
 
 function App() {
 
@@ -43,6 +49,7 @@ function App() {
           <Route path="/blogpage" element={<BlogPage />} />
           <Route path="/newspage" element={<NewsPage />} />
           <Route path="/foodpage" element={<FoodPage />} />
+          <Route path="/contactpage" element={<ContactPage />} />
           <Route path="/reviewpage" element={<ReviewsPage />} />
           <Route path="/recipepage" element={<RecipePage />} />
           <Route path="/workoutspage" element={<WorkoutsPage />} />
@@ -51,6 +58,11 @@ function App() {
           <Route path="/trendingpage" element={<TrendingPage />} />
           <Route path="/quizpage" element={<HealthQuiz />} />
           <Route path="/toolpage" element={<HealthTools />} />
+          <Route path="/vegepage" element={<VegetablePage />} />
+          <Route path="/fruitpage" element={<FruitPage />} />
+          <Route path="/proteinpage" element={<ProteinPage />} />
+          <Route path="/herbpage" element={<HerbsPage />} />
+          <Route path="/bevpage" element={<BeveragePage />} />
         </Routes>
 
         <Footer />

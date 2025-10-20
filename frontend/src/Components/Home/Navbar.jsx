@@ -141,7 +141,7 @@ const Navbar = () => {
             </div>
 
             <Link
-              to="/contact"
+              to="/contactpage"
               className="hover:text-gray-200 flex items-center gap-1"
             >
               <FaEnvelope /> Contact
