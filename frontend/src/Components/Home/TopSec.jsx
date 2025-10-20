@@ -179,50 +179,54 @@ const TopSec = () => {
         </div>
 
         {/* RIGHT - Health News */}
-        <div className="w-full lg:w-5/12 flex flex-col items-center justify-start border-t-2 lg:border-t-0 lg:border-l-2 border-green-200 pt-10 lg:pt-0 lg:pl-10">
+        <div className="w-full lg:w-1/2 flex flex-col items-center justify-start border-t-2 lg:border-t-0 lg:border-l-2 border-green-200 pt-10 lg:pt-0 lg:pl-10 overflow-hidden">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-6 text-center">
             Health News
           </h2>
 
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentNewsIndex}
-              initial={{ x: 100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="flex flex-col gap-6 w-full"
-            >
-              {visibleNews.map((news, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ x: 100, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="bg-white p-4 rounded-xl shadow hover:shadow-lg transition-shadow duration-300"
-                >
-                  <div className="flex items-center gap-3 mb-2">
-                    <img
-                      src={news.image}
-                      alt={news.title}
-                      className="h-12 w-12 rounded-full object-cover"
-                    />
-                    <p className="font-semibold text-gray-800 text-sm sm:text-base">
-                      {news.title}
-                    </p>
-                  </div>
-                  <p className="text-gray-600 text-sm">{news.summary}</p>
-                  <div className="text-right mt-2">
-                    <Link
-                      to="/newspage"
-                      className="text-green-600 hover:underline text-sm font-medium"
-                    >
-                      Read More →
-                    </Link>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
+          <div className="relative w-full min-h-[400px] flex flex-col items-center justify-start">
+            {/* ✅ Wrap motion.div in a relative container to stabilize layout */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentNewsIndex}
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -100, opacity: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="absolute inset-0 flex flex-col gap-6 w-full"
+              >
+                {visibleNews.map((news, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ x: 50, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="bg-white p-4 rounded-xl shadow hover:shadow-lg transition-shadow duration-300"
+                  >
+                    <div className="flex items-center gap-3 mb-2">
+                      <img
+                        src={news.image}
+                        alt={news.title}
+                        className="h-12 w-12 rounded-full object-cover"
+                      />
+                      <p className="font-semibold text-gray-800 text-sm sm:text-base">
+                        {news.title}
+                      </p>
+                    </div>
+                    <p className="text-gray-600 text-sm">{news.summary}</p>
+                    <div className="text-right mt-2">
+                      <Link
+                        to="/newspage"
+                        className="text-green-600 hover:underline text-sm font-medium"
+                      >
+                        Read More →
+                      </Link>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </AnimatePresence>
+          </div>
 
           <div className="flex justify-center mt-6 gap-2">
             {Array.from({ length: totalPages }).map((_, i) => (

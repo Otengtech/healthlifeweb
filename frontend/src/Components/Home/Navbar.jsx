@@ -30,12 +30,19 @@ const Navbar = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     const pages = [
-      { name: "home", path: "/" },
-      { name: "programs", path: "/programspage" },
-      { name: "trending", path: "/trendingpage" },
-      { name: "news", path: "/newspage" },
-      { name: "blog", path: "/blogpage" },
-      { name: "contact", path: "/contact" },
+      { name: "homehomepage", path: "/" },
+      { name: "programsshows,", path: "/programspage" },
+      { name: "trendingtopicsfoodsupdatenewnow", path: "/trendingpage" },
+      { name: "newsupdatesviralnow", path: "/newspage" },
+      { name: "blogdaily", path: "/blogpage" },
+      { name: "contactcall", path: "/contact" },
+      { name: "workoutsfitexercise", path: "/workoutspage" },
+      { name: "aboutusinfo", path: "/aboutpage" },
+      { name: "recipefoodhowtocookdishes30minscook", path: "/recipepage" },
+      { name: "reviewsmessages", path: "/reviewpage" },
+      { name: "quiz", path: "/quizpage" },
+      { name: "tool", path: "/toolpage" },
+      { name: "expertshelpconvo", path: "/expertspage" },
     ];
 
     const result = pages.find((p) =>
@@ -54,20 +61,16 @@ const Navbar = () => {
 
   return (
     <nav className="bg-gray-900 sticky top-0 z-50 shadow-md">
-      <p className="p-2 bg-gray-200 text-gray-800 text-end flex justify-end items-center text-sm font-bold">Hotline: +233593957373</p>
-      <div className="flex justify-between items-center px-6 md:px-12 py-4">
+      {/* <p className="p-2 bg-gray-200 text-gray-800 text-end flex justify-end items-center text-sm font-bold">Hotline: +233593957373</p> */}
+      <div className="flex justify-between items-center px-3 md:px-12 py-5">
         <div className="flex items-center gap-3">
           {/* Brand */}
           <Link
             to="/"
             className="text-green-300 text-lg font-extrabold mr-3 tracking-wide"
           >
-            <h1>HEALTHLIFE</h1>
+            <h3>HEALTHLIFE</h3>
           </Link>
-          <Link to="/quizpage" className="flex sm:hidden font-bold items-center text-green-300">
-          <FaLightbulb/>Quiz</Link>
-          <Link to="/toolpage" className="flex sm:hidden font-bold items-center text-green-300">
-          <FaTools/>Tools</Link>
           {/* Desktop Links */}
           <div className="hidden md:flex items-center space-x-8 text-gray-300">
             <Link
@@ -256,6 +259,8 @@ const Navbar = () => {
                     icon: <FaDumbbell />,
                   },
                   { label: "Reviews", to: "/reviewpage", icon: <FaBookOpen/> },
+                  { label: "Quiz", to: "/quizpage", icon: <FaLightbulb/> },
+                  { label: "Health Tools", to: "/toolpage", icon: <FaTools/> },
                   { label: "Contact Us", to: "/contactpage", icon: <FaEnvelope/> },
                   { label: "About Us", to: "/aboutuspage", icon: <FaInfo/> },
                 ].map((item, i) => (
