@@ -118,132 +118,131 @@ const TopSec = () => {
   return (
     <>
       {/* ✅ HEALTHY FOODS + HEALTH NEWS SECTION */}
-      <div className="w-full flex flex-col lg:flex-row items-stretch justify-center py-16 bg-gray-100 gap-10 lg:gap-16 px-4 sm:px-6 lg:px-10">
-        {/* LEFT - Healthy Foods */}
-        <div className="w-full lg:w-6/12 flex flex-col items-center">
-          <motion.h2
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-green-600 mb-6 text-center"
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            Healthy Foods
-          </motion.h2>
+      <div className="w-full bg-gray-900 py-16 px-6 sm:px-12 lg:px-20 text-white">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
+          {/* LEFT - Healthy Foods */}
+          <div className="w-full lg:w-6/12 flex flex-col items-center">
+            <motion.h2
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-green-400 mb-6 text-center"
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+            >
+              Healthy Foods
+            </motion.h2>
 
-          <div className="relative w-full max-w-2xl">
-            <Link to="/foodpage">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentIndex}
-                  initial={{ x: -100, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden"
-                >
-                  <div className="md:w-1/2 p-6 flex flex-col justify-center">
-                    <h3 className="text-xl md:text-2xl font-semibold text-green-600 mb-2">
-                      {healthyProducts[currentIndex].name}
-                    </h3>
-                    <p className="text-gray-700 text-sm sm:text-base mb-4 leading-relaxed">
-                      {healthyProducts[currentIndex].importance}
-                    </p>
-                    <p className="font-medium text-green-500 mb-1">
-                      Nutrients:
-                    </p>
-                    <ul className="list-disc list-inside text-gray-800 text-sm grid grid-cols-2 gap-x-2">
-                      {healthyProducts[currentIndex].nutrients.map((n, i) => (
-                        <li key={i}>{n}</li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="md:w-1/2 w-full h-64 md:h-auto">
-                    <img
-                      src={healthyProducts[currentIndex].image}
-                      alt={healthyProducts[currentIndex].name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            </Link>
-          </div>
-
-          <div className="flex justify-center mt-4 gap-2">
-            {healthyProducts.map((_, i) => (
-              <button
-                key={i}
-                className={`w-3 h-3 rounded-full ${
-                  i === currentIndex ? "bg-green-600 scale-110" : "bg-green-300"
-                } transition-all duration-300`}
-                onClick={() => setCurrentIndex(i)}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* RIGHT - Health News */}
-        <div className="w-full lg:w-1/2 flex flex-col items-center justify-start border-t-2 lg:border-t-0 lg:border-l-2 border-green-200 pt-10 lg:pt-0 lg:pl-10 overflow-hidden">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-6 text-center">
-            Health News
-          </h2>
-
-          <div className="relative w-full min-h-[400px] flex flex-col items-center justify-start">
-            {/* ✅ Wrap motion.div in a relative container to stabilize layout */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentNewsIndex}
-                initial={{ x: 100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -100, opacity: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="absolute inset-0 flex flex-col gap-6 w-full"
-              >
-                {visibleNews.map((news, i) => (
+            <div className="relative w-full max-w-2xl">
+              <Link to="/foodpage">
+                <AnimatePresence mode="wait">
                   <motion.div
-                    key={i}
-                    initial={{ x: 50, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="bg-white p-4 rounded-xl shadow hover:shadow-lg transition-shadow duration-300"
+                    key={currentIndex}
+                    initial={{ x: -100, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
+                    className="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden"
                   >
-                    <div className="flex items-center gap-3 mb-2">
-                      <img
-                        src={news.image}
-                        alt={news.title}
-                        className="h-12 w-12 rounded-full object-cover"
-                      />
-                      <p className="font-semibold text-gray-800 text-sm sm:text-base">
-                        {news.title}
+                    <div className="md:w-1/2 p-6 flex flex-col justify-center">
+                      <h1 className="text-xl md:text-2xl font-semibold text-green-600 mb-2">
+                        {healthyProducts[currentIndex].name}
+                      </h1>
+                      <p className="text-gray-700 text-sm sm:text-base mb-4 leading-relaxed">
+                        {healthyProducts[currentIndex].importance}
                       </p>
+                      <h1 className="font-medium text-green-600 mb-1">Nutrients:</h1>
+                      <ul className="list-disc list-inside text-gray-800 text-sm grid grid-cols-2 gap-x-2">
+                        {healthyProducts[currentIndex].nutrients.map((n, i) => (
+                          <li key={i}>{n}</li>
+                        ))}
+                      </ul>
                     </div>
-                    <p className="text-gray-600 text-sm">{news.summary}</p>
-                    <div className="text-right mt-2">
-                      <Link
-                        to="/newspage"
-                        className="text-green-600 hover:underline text-sm font-medium"
-                      >
-                        Read More →
-                      </Link>
+
+                    <div className="md:w-1/2 w-full h-72 md:h-auto">
+                      <img
+                        src={healthyProducts[currentIndex].image}
+                        alt={healthyProducts[currentIndex].name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   </motion.div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
+                </AnimatePresence>
+              </Link>
+            </div>
+
+            <div className="flex justify-center mt-4 gap-2">
+              {healthyProducts.map((_, i) => (
+                <button
+                  key={i}
+                  className={`w-3 h-3 rounded-full ${
+                    i === currentIndex ? 'bg-green-500 scale-110' : 'bg-green-300'
+                  } transition-all duration-300`}
+                  onClick={() => setCurrentIndex(i)}
+                />
+              ))}
+            </div>
           </div>
 
-          <div className="flex justify-center mt-6 gap-2">
-            {Array.from({ length: totalPages }).map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrentNewsIndex(i * 2)}
-                className={`w-3 h-3 rounded-full ${
-                  i * 2 === currentNewsIndex
-                    ? "bg-green-600 scale-110"
-                    : "bg-green-300"
-                } transition-all duration-300`}
-              />
-            ))}
+          {/* RIGHT - Health News */}
+          <div className="w-full lg:w-1/2 flex flex-col items-center justify-start border-t-2 lg:border-t-0 lg:border-l-2 border-green-800 pt-10 lg:pt-0 lg:pl-10 overflow-hidden">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-400 mb-6 text-center">
+              Health News
+            </h2>
+
+            <div className="relative w-full min-h-[400px] flex flex-col items-center justify-start">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentNewsIndex}
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: -100, opacity: 0 }}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}
+                  className="absolute inset-0 flex flex-col gap-6 w-full"
+                >
+                  {visibleNews.map((news, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ x: 50, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.6, ease: 'easeOut' }}
+                      className="bg-white p-4 rounded-xl shadow hover:shadow-lg transition-shadow duration-300"
+                    >
+                      <div className="flex items-center gap-3 mb-2">
+                        <img
+                          src={news.image}
+                          alt={news.title}
+                          className="h-12 w-12 rounded-full object-cover"
+                        />
+                        <p className="font-semibold text-gray-800 text-sm sm:text-base">
+                          {news.title}
+                        </p>
+                      </div>
+                      <p className="text-gray-600 text-sm">{news.summary}</p>
+                      <div className="text-right mt-2">
+                        <Link
+                          to="/newspage"
+                          className="text-green-600 hover:underline text-sm font-medium"
+                        >
+                          Read More →
+                        </Link>
+                      </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            <div className="flex justify-center mt-6 gap-2">
+              {Array.from({ length: totalPages }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentNewsIndex(i * 2)}
+                  className={`w-3 h-3 rounded-full ${
+                    i * 2 === currentNewsIndex
+                      ? 'bg-green-500 scale-110'
+                      : 'bg-green-300'
+                  } transition-all duration-300`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -270,16 +269,16 @@ const TopSec = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {[
             {
-              title: "What is Health?",
+              title: 'What is Health?',
               text: "Health is not just the absence of disease or weakness—it’s a complete state of physical, mental, and emotional well-being. It’s the balance between your body, mind, and lifestyle.",
             },
             {
-              title: "Factors for Good Health",
-              text: "Good health depends on many factors working together in harmony. A balanced diet fuels your body with essential nutrients, while regular physical activity strengthens your muscles, heart, and immune system.",
+              title: 'Factors for Good Health',
+              text: 'Good health depends on many factors working together in harmony. A balanced diet fuels your body with essential nutrients, while regular physical activity strengthens your muscles, heart, and immune system.',
             },
             {
-              title: "Preserving Health",
-              text: "Preserving your health means making conscious choices every day. Eat whole foods, stay active, drink enough water, and get enough rest. Avoid harmful habits like smoking or excessive alcohol.",
+              title: 'Preserving Health',
+              text: 'Preserving your health means making conscious choices every day. Eat whole foods, stay active, drink enough water, and get enough rest. Avoid harmful habits like smoking or excessive alcohol.',
             },
           ].map((item, i) => (
             <motion.div
@@ -320,23 +319,23 @@ const TopSec = () => {
               {[
                 {
                   icon: <FaHeartbeat className="text-3xl text-green-600" />,
-                  name: "Increases Life Expectancy",
-                  desc: "Maintaining good health prevents diseases and promotes longevity.",
+                  name: 'Increases Life Expectancy',
+                  desc: 'Maintaining good health prevents diseases and promotes longevity.',
                 },
                 {
                   icon: <FaBrain className="text-3xl text-green-600" />,
-                  name: "Improves Mental Well-being",
-                  desc: "A healthy body supports a sound and happy mind.",
+                  name: 'Improves Mental Well-being',
+                  desc: 'A healthy body supports a sound and happy mind.',
                 },
                 {
                   icon: <FaRunning className="text-3xl text-green-600" />,
-                  name: "Boosts Energy & Focus",
-                  desc: "Healthy habits enhance stamina and productivity.",
+                  name: 'Boosts Energy & Focus',
+                  desc: 'Healthy habits enhance stamina and productivity.',
                 },
                 {
                   icon: <FaUsers className="text-3xl text-green-600" />,
-                  name: "Strengthens Social Life",
-                  desc: "Feeling well boosts confidence and social interaction.",
+                  name: 'Strengthens Social Life',
+                  desc: 'Feeling well boosts confidence and social interaction.',
                 },
               ].map((item, i) => (
                 <motion.div

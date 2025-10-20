@@ -29,9 +29,9 @@ const Workouts = () => {
   ];
 
   return (
-    <div className="py-16 px-6 sm:px-10 md:px-16 lg:px-24 xl:px-28">
+    <div className="py-16 px-6 sm:px-10 bg-gray-900 md:px-16 lg:px-24 xl:px-28">
       {/* Section Title */}
-      <div className="text-center text-2xl sm:text-3xl md:text-4xl font-bold text-green-800 mb-10">
+      <div className="text-center text-2xl sm:text-3xl md:text-4xl font-bold text-green-500 mb-10">
         Workout Section
       </div>
 
@@ -50,7 +50,7 @@ const Workouts = () => {
               <img
                 src={workout.image}
                 alt={workout.title}
-                className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover"
+                className="w-full h-48 sm:h-56 md:h-64 lg:h-64 object-cover"
               />
               <div className="p-4 sm:p-5 md:p-6">
                 <h1 className="text-lg sm:text-xl text-green-600 font-semibold my-2">

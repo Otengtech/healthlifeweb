@@ -64,7 +64,7 @@ const ContactPage = () => {
             </div>
             <div className="flex items-center gap-3">
               <FaEnvelope className="text-emerald-400 text-lg" />
-              <span>support@healthylife.com</span>
+              <span>otengebenezer326@gmail.com</span>
             </div>
             <div className="flex items-center gap-3">
               <FaClock className="text-emerald-400 text-lg" />

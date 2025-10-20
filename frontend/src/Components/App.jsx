@@ -23,7 +23,9 @@ import FruitPage from "./Pages/FruitPage";
 import ProteinPage from "./Pages/ProteinPage";
 import HerbsPage from "./Pages/HerbsPage";
 import BeveragePage from "./Pages/BeveragePage";
-import ContactPage from "./Pages/ContactPage";
+import ContactPage from "./Pages/ContactPage"
+import ScrollToTop from "./Home/ScrollToTop";
+import ChatBox from "./Home/ChatBot";
 
 function App() {
 
@@ -33,6 +35,7 @@ function App() {
       <Hero />
       <TopSec />
       <LastSec />
+      <ChatBox />
     </>
   );
 }
@@ -64,7 +67,7 @@ function App() {
           <Route path="/herbpage" element={<HerbsPage />} />
           <Route path="/bevpage" element={<BeveragePage />} />
         </Routes>
-
+        <ScrollToTop />
         <Footer />
       </div>
   );

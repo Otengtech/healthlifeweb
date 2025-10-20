@@ -98,7 +98,6 @@ const MiddleSec = () => {
               {tab.label}
               {activeTab === tab.key && (
                 <motion.div
-                  layoutId="underline"
                   className="absolute left-0 bottom-0 h-1 w-full bg-green-600 rounded-full"
                   transition={{ type: "spring", stiffness: 500, damping: 30 }}
                 />

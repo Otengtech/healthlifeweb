@@ -37,21 +37,20 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-300 flex flex-col justify-between py-12">
       {/* Top Grid Section */}
-      <div className="container mx-auto px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="container mx-auto px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {/* Brand / About */}
         <div>
-          <h2 className="text-2xl font-bold text-green-400 mb-4">HealthyLife</h2>
+          <h2 className="text-2xl font-bold text-green-400 mb-4">HealthLife</h2>
           <p className="text-sm leading-relaxed mb-4">
             Empowering you with health tips, nutrition advice, and fitness
-            motivation to help you live a balanced lifestyle. Join our growing
-            wellness community today.
+            motivation to help you live a balanced lifestyle.
           </p>
           <div className="mt-5 space-y-2 text-sm">
             <p className="flex items-center gap-2">
-              <FaEnvelope className="text-green-400" /> contact@healthylife.com
+              <FaEnvelope className="text-green-400" /> otengebenezer326@gmail.com
             </p>
             <p className="flex items-center gap-2">
-              <FaPhone className="text-green-400" /> +233 55 123 4567
+              <FaPhone className="text-green-400" /> +233 593 957 373
             </p>
             <p className="flex items-center gap-2">
               <FaMapMarkerAlt className="text-green-400" /> Accra, Ghana
@@ -68,7 +67,8 @@ const Footer = () => {
               { name: "About Us", path: "/aboutuspage" },
               { name: "Programs", path: "/programspage" },
               { name: "Blog", path: "/blogpage" },
-              { name: "Contact", path: "/contactuspage" },
+              { name: "Contact", path: "/contactpage" },
+              { name: "About Us", path: "/aboutpage" },
               { name: "Health News", path: "/newspage" },
             ].map((link) => (
               <li key={link.name}>
@@ -81,31 +81,6 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-        </div>
-
-        {/* Newsletter */}
-        <div>
-          <h1 className="text-xl font-semibold text-green-400 mb-3">Newsletter</h1>
-          <p className="text-sm mb-3">
-            Get our latest wellness tips, recipes, and workout plans delivered
-            to your inbox.
-          </p>
-          <form className="flex flex-col sm:flex-row sm:items-center">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="px-3 py-2 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500 w-full sm:flex-grow"
-            />
-            <button
-              type="submit"
-              className="mt-2 sm:mt-0 sm:ml-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md transition duration-300"
-            >
-              Subscribe
-            </button>
-          </form>
-          <p className="mt-3 text-xs text-gray-400">
-            We respect your privacy. Unsubscribe anytime.
-          </p>
         </div>
 
         {/* Social Media */}
@@ -144,7 +119,7 @@ const Footer = () => {
       </div>
 
       {/* Developer Team Section */}
-      <div className="bg-gray-800 mt-16 py-12 px-6 sm:px-10 md:px-16 lg:px-24">
+      <div className="bg-gray-900 mt-16 py-12 px-6 sm:px-10 md:px-16 lg:px-24">
         <h1 className="text-center text-2xl font-semibold text-green-400 mb-10">
           Meet Our Developers
         </h1>
@@ -152,7 +127,7 @@ const Footer = () => {
           {developers.map((dev, index) => (
             <div
               key={index}
-              className="bg-gray-900 p-6 rounded-2xl hover:shadow-lg transition duration-300 text-center sm:text-left"
+              className="bg-gray-800 p-6 rounded-2xl hover:shadow-lg transition duration-300 text-center sm:text-left"
             >
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 mb-4">
                 <img
