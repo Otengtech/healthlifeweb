@@ -117,7 +117,7 @@ const ChatBox = () => {
       setMessages((prev) => [...prev, { sender: "bot", text: botReply }]);
       setLoading(false);
     }, 700);
-  };
+  }
 
   const handleClearChat = () => {
     localStorage.removeItem("chatMessages");
