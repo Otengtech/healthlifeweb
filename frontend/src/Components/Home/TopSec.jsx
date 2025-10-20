@@ -131,38 +131,42 @@ const TopSec = () => {
           </motion.h2>
 
           <div className="relative w-full max-w-2xl">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentIndex}
-                initial={{ x: -100, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden"
-              >
-                <div className="md:w-1/2 p-6 flex flex-col justify-center">
-                  <h3 className="text-xl md:text-2xl font-semibold text-green-600 mb-2">
-                    {healthyProducts[currentIndex].name}
-                  </h3>
-                  <p className="text-gray-700 text-sm sm:text-base mb-4 leading-relaxed">
-                    {healthyProducts[currentIndex].importance}
-                  </p>
-                  <p className="font-medium text-green-500 mb-1">Nutrients:</p>
-                  <ul className="list-disc list-inside text-gray-800 text-sm grid grid-cols-2 gap-x-2">
-                    {healthyProducts[currentIndex].nutrients.map((n, i) => (
-                      <li key={i}>{n}</li>
-                    ))}
-                  </ul>
-                </div>
+            <Link to="/foodpage">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  initial={{ x: -100, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden"
+                >
+                  <div className="md:w-1/2 p-6 flex flex-col justify-center">
+                    <h3 className="text-xl md:text-2xl font-semibold text-green-600 mb-2">
+                      {healthyProducts[currentIndex].name}
+                    </h3>
+                    <p className="text-gray-700 text-sm sm:text-base mb-4 leading-relaxed">
+                      {healthyProducts[currentIndex].importance}
+                    </p>
+                    <p className="font-medium text-green-500 mb-1">
+                      Nutrients:
+                    </p>
+                    <ul className="list-disc list-inside text-gray-800 text-sm grid grid-cols-2 gap-x-2">
+                      {healthyProducts[currentIndex].nutrients.map((n, i) => (
+                        <li key={i}>{n}</li>
+                      ))}
+                    </ul>
+                  </div>
 
-                <div className="md:w-1/2 w-full h-64 md:h-auto">
-                  <img
-                    src={healthyProducts[currentIndex].image}
-                    alt={healthyProducts[currentIndex].name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </motion.div>
-            </AnimatePresence>
+                  <div className="md:w-1/2 w-full h-64 md:h-auto">
+                    <img
+                      src={healthyProducts[currentIndex].image}
+                      alt={healthyProducts[currentIndex].name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </Link>
           </div>
 
           <div className="flex justify-center mt-4 gap-2">

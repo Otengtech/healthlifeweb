@@ -17,6 +17,7 @@ import RecipePage from "./Pages/RecipePage";
 import PageTransition from "./Home/PageTransition";
 import HealthQuiz from "./Pages/QuizPage";
 import HealthTools from "./Pages/ToolPage";
+import FoodPage from "./Pages/FoodPage";
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
           <Route path="/aboutpage" element={<AboutUsPage />} />
           <Route path="/blogpage" element={<BlogPage />} />
           <Route path="/newspage" element={<NewsPage />} />
+          <Route path="/foodpage" element={<FoodPage />} />
           <Route path="/reviewpage" element={<ReviewsPage />} />
           <Route path="/recipepage" element={<RecipePage />} />
           <Route path="/workoutspage" element={<WorkoutsPage />} />

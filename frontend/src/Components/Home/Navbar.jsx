@@ -18,6 +18,7 @@ import {
   FaVoicemail,
   FaLightbulb,
   FaTools,
+  FaCookieBite,
 } from "react-icons/fa";
 
 const Navbar = () => {
@@ -43,6 +44,7 @@ const Navbar = () => {
       { name: "quiz", path: "/quizpage" },
       { name: "tool", path: "/toolpage" },
       { name: "expertshelpconvo", path: "/expertspage" },
+      { name: "Foodshealthyclean", path: "/foodpage" },
     ];
 
     const result = pages.find((p) =>
@@ -67,9 +69,9 @@ const Navbar = () => {
           {/* Brand */}
           <Link
             to="/"
-            className="text-green-300 text-lg font-extrabold mr-3 tracking-wide"
+            className="text-green-300 text-lg font-extrabold tracking-wide"
           >
-            <h3>HEALTHLIFE</h3>
+            <h1 className="flex items-center">HEALTHLIFE<FaLightbulb/></h1>
           </Link>
           {/* Desktop Links */}
           <div className="hidden md:flex items-center space-x-8 text-gray-300">
@@ -126,6 +128,12 @@ const Navbar = () => {
                       className="block px-4 py-2 hover:bg-gray-700 transition"
                     >
                       Trending
+                    </Link>
+                    <Link
+                      to="/foodpage"
+                      className="block px-4 py-2 hover:bg-gray-700 transition"
+                    >
+                      Healthy Foods
                     </Link>
                   </motion.div>
                 )}
@@ -252,6 +260,7 @@ const Navbar = () => {
                   { label: "Home", to: "/", icon: <FaHome /> },
                   { label: "Programs", to: "/programspage", icon: <FaBars /> },
                   { label: "News", to: "/newspage", icon: <FaNewspaper /> },
+                  { label: "Healthy Foods", to: "/foodpage", icon: <FaCookieBite /> },
                   { label: "Blog", to: "/blogpage", icon: <FaBlog /> },
                   {
                     label: "Trending",
@@ -262,7 +271,7 @@ const Navbar = () => {
                   { label: "Quiz", to: "/quizpage", icon: <FaLightbulb/> },
                   { label: "Health Tools", to: "/toolpage", icon: <FaTools/> },
                   { label: "Contact Us", to: "/contactpage", icon: <FaEnvelope/> },
-                  { label: "About Us", to: "/aboutuspage", icon: <FaInfo/> },
+                  { label: "About Us", to: "/aboutpage", icon: <FaInfo/> },
                 ].map((item, i) => (
                   <motion.div
                     key={item.to}

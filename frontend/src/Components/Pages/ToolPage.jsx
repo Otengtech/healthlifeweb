@@ -315,7 +315,7 @@ const HealthTools = () => {
   const tool = tools[current];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center relative overflow-hidden px-4 py-10">
+    <div className="bg-gray-900 text-white flex flex-col items-center justify-center relative overflow-hidden px-4 py-10">
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

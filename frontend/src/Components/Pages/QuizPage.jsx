@@ -119,15 +119,9 @@ const HealthQuiz = () => {
 
   return (
     <div
-      className="min-h-screen flex flex-col justify-center items-center bg-gray-900 text-white px-6 py-10 relative overflow-hidden"
-      style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1920&q=80')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="flex flex-col justify-center items-center bg-gray-900 text-white px-6 py-10 relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
+      <div className="text-green-500 mb-6 font-bold text-3xl">Take a Quiz</div>
 
       <div className="relative z-10 w-full max-w-2xl text-center">
         <AnimatePresence mode="wait">
@@ -141,7 +135,7 @@ const HealthQuiz = () => {
               className="space-y-6 bg-gray-800/80 rounded-3xl p-8 shadow-xl"
             >
               <h1 className="text-4xl font-bold text-green-400">
-                Welcome to Your Health Quiz 🌱
+                Welcome to Your Health Quiz
               </h1>
               <p className="text-gray-300 text-lg">
                 In just a few questions, we’ll assess your overall wellness
