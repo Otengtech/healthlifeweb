@@ -19,6 +19,7 @@ import {
   FaLightbulb,
   FaTools,
   FaCookieBite,
+  FaLink,
 } from "react-icons/fa";
 
 const Navbar = () => {
@@ -71,7 +72,7 @@ const Navbar = () => {
             to="/"
             className="text-green-300 text-lg font-extrabold tracking-wide"
           >
-            <h1 className="flex items-center">HEALTHLIFE<FaLightbulb/></h1>
+            <h1 className="flex items-center mr-6">HEALTHLIFE<FaLightbulb/></h1>
           </Link>
           {/* Desktop Links */}
           <div className="hidden md:flex items-center space-x-8 text-gray-300">
@@ -100,7 +101,7 @@ const Navbar = () => {
               onMouseLeave={() => setDropdown(null)}
             >
               <button className="flex items-center gap-1 hover:text-gray-300">
-                <FaNewspaper /> News <FaChevronDown size={12} />
+                <FaLink /> Links <FaChevronDown size={12} />
               </button>
               <AnimatePresence>
                 {dropdown === "articles" && (
@@ -135,17 +136,23 @@ const Navbar = () => {
                     >
                       Healthy Foods
                     </Link>
+                    <Link
+                      to="/contactpage"
+                      className="block px-4 py-2 hover:bg-gray-700 transition"
+                    >
+                      Contact Us
+                    </Link>
+                    <Link
+                      to="/aboutpage"
+                      className="block px-4 py-2 hover:bg-gray-700 transition"
+                    >
+                      About Us
+                    </Link>
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
 
-            <Link
-              to="/contactpage"
-              className="hover:text-gray-200 flex items-center gap-1"
-            >
-              <FaEnvelope /> Contact
-            </Link>
           </div>
         </div>
 

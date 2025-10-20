@@ -46,7 +46,7 @@ const HeroSection = () => {
             </motion.h1>
 
             <motion.p
-              className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 leading-relaxed"
+              className="text-base sm:text-lg md:text-lg text-gray-200 mb-8 leading-relaxed"
               initial={{ x: -60, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
@@ -67,13 +67,13 @@ const HeroSection = () => {
               >
                 <Link
                   to="/contactpage"
-                  className="py-4 px-6 font-semibold bg-gray-900 text-green-300 hover:bg-gray-800 transition-transform hover:scale-105"
+                  className="py-3 px-6 mr-3 font-semibold bg-gray-900 text-green-300 hover:bg-gray-800 transition-transform hover:scale-105"
                 >
                   Contact Us
                 </Link>
                 <Link
                   to="/aboutpage"
-                  className="py-4 px-6 font-semibold bg-gray-900 text-green-300 hover:bg-gray-800 transition-transform hover:scale-105"
+                  className="py-3 px-6 font-semibold bg-gray-900 text-green-300 hover:bg-gray-800 transition-transform hover:scale-105"
                 >
                   About Us
                 </Link>
@@ -93,9 +93,6 @@ const HeroSection = () => {
               <div className="flex gap-4">
                 {orbitIcons.map((item, idx) => (
                   <motion.div
-                    initial={{ x: -60, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.8 }}
                     key={item.label}
                     className="flex items-center justify-center rounded-full backdrop-sm text-green-300 bg-gray-900 shadow-lg"
                     style={{
