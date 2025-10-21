@@ -22,20 +22,16 @@ const responses = {
     "Walking is one of the best low-impact exercises. Aim for 8,000–10,000 steps a day.",
   stretching:
     "Stretching improves flexibility and reduces soreness. Stretch major muscles after every workout.",
-  gym:
-    "The gym can help you build strength safely. Focus on proper form, not just heavy weights.",
-  yoga:
-    "Yoga improves flexibility, balance, and stress control. Even 10 minutes a day can help.",
-  diet:
-    "A balanced diet includes lean protein, whole grains, vegetables, fruits, and healthy fats. Avoid extreme restrictions.",
+  gym: "The gym can help you build strength safely. Focus on proper form, not just heavy weights.",
+  yoga: "Yoga improves flexibility, balance, and stress control. Even 10 minutes a day can help.",
+  diet: "A balanced diet includes lean protein, whole grains, vegetables, fruits, and healthy fats. Avoid extreme restrictions.",
   nutrition:
     "Nutrition is about balance and variety. Include fiber, vitamins, and adequate water daily.",
   protein:
     "Protein builds muscles and repairs tissue. Great sources: chicken, beans, eggs, tofu, and lentils.",
   carbs:
     "Carbohydrates are your main energy source. Choose complex carbs like oats, brown rice, and quinoa.",
-  fats:
-    "Healthy fats support your brain and hormones. Choose avocados, olive oil, nuts, and fish.",
+  fats: "Healthy fats support your brain and hormones. Choose avocados, olive oil, nuts, and fish.",
   vitamins:
     "Vitamins like A, C, D, E, and B-complex support immune and metabolic functions. Eat colorful foods to get them.",
   hydration:
@@ -48,14 +44,11 @@ const responses = {
     "Stress is normal, but managing it matters. Try breathing exercises, stretching, or short walks to reset your mind.",
   mental:
     "Mental health matters. Journaling, talking to someone, and relaxation techniques can help.",
-  food:
-    "Healthy eating means balance. Choose real foods, limit processed items, and listen to your hunger signals.",
+  food: "Healthy eating means balance. Choose real foods, limit processed items, and listen to your hunger signals.",
   weight:
     "Weight management is about consistency: eat balanced meals and stay active regularly.",
-  loss:
-    "For healthy weight loss, combine moderate calorie reduction with regular physical activity and adequate sleep.",
-  gain:
-    "To gain weight healthily, increase calories with nutritious foods like nuts, avocados, eggs, and whole grains.",
+  loss: "For healthy weight loss, combine moderate calorie reduction with regular physical activity and adequate sleep.",
+  gain: "To gain weight healthily, increase calories with nutritious foods like nuts, avocados, eggs, and whole grains.",
   breakfast:
     "Breakfast kick-starts your metabolism. Choose whole grains, fruit, and protein for sustained energy.",
   lunch:
@@ -64,8 +57,7 @@ const responses = {
     "Keep dinner light but nourishing. Include veggies, a lean protein, and avoid heavy carbs close to bedtime.",
   sugar:
     "Too much sugar increases fatigue and cravings. Opt for fruits or natural sweeteners in moderation.",
-  junk:
-    "Junk food is fine occasionally, but limit it. Focus on nutritious meals most of the time.",
+  junk: "Junk food is fine occasionally, but limit it. Focus on nutritious meals most of the time.",
   smoking:
     "Quitting smoking improves heart and lung health, energy levels, and overall lifespan.",
   alcohol:
@@ -90,7 +82,10 @@ const ChatBox = () => {
       setMessages(JSON.parse(saved));
     } else {
       setMessages([
-        { sender: "bot", text: "Hello! I’m your HealthLife Assistant. How can I help you today?" },
+        {
+          sender: "bot",
+          text: "Hello! I’m your HealthLife Assistant. How can I help you today?",
+        },
       ]);
     }
   }, []);
@@ -117,11 +112,13 @@ const ChatBox = () => {
       setMessages((prev) => [...prev, { sender: "bot", text: botReply }]);
       setLoading(false);
     }, 700);
-  }
+  };
 
   const handleClearChat = () => {
     localStorage.removeItem("chatMessages");
-    setMessages([{ sender: "bot", text: "Chat cleared. How can I help you now?" }]);
+    setMessages([
+      { sender: "bot", text: "Chat cleared. How can I help you now?" },
+    ]);
   };
 
   return (
@@ -130,28 +127,28 @@ const ChatBox = () => {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-12 right-16 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-sm shadow-gray-900 transition-transform transform hover:scale-110 z-50"
+          className="fixed bottom-16 right-16 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-lg transition-transform transform hover:scale-110 z-50"
         >
-          <FaComments size={18} />
+          <FaComments size={26} />
         </button>
       )}
 
       {/* Chat box */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 w-80 sm:w-96 bg-white max-h-96 rounded-2xl shadow-2xl flex flex-col overflow-y-auto z-50 border border-green-100">
+        <div className="fixed bottom-6 right-6 w-80 sm:w-96 max-h-[500px] flex flex-col rounded-2xl shadow-2xl overflow-hidden border border-green-100 z-50">
           {/* Header */}
-          <div className="bg-green-600 text-white p-3 flex justify-between items-center">
-            <h1 className="font-semibold">HealthLife Assistant</h1>
+          <div className="bg-gradient-to-r from-green-600 to-green-500 text-white p-4 flex justify-between items-center">
+            <h1 className="font-bold text-lg">HealthLife Assistant</h1>
             <div className="flex items-center gap-2">
               <button
                 onClick={handleClearChat}
-                className="text-xs px-2 py-1 bg-green-700 hover:bg-green-800 rounded"
+                className="text-sm px-2 py-1 bg-gray-700 hover:bg-green-800 rounded transition"
               >
                 Clear
               </button>
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-white text-xl font-bold leading-none"
+                className="text-white text-xl bg-gray-700 px-2 py-1 font-bold leading-none hover:text-gray-200 transition"
               >
                 ×
               </button>
@@ -159,14 +156,16 @@ const ChatBox = () => {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-gray-50 scroll-smooth">
+          <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-gray-300 scroll-smooth">
             {messages.map((msg, i) => (
               <div
                 key={i}
-                className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}
+                className={`flex ${
+                  msg.sender === "user" ? "justify-end" : "justify-start"
+                }`}
               >
                 <div
-                  className={`px-3 py-2 rounded-lg max-w-[80%] text-sm shadow-sm ${
+                  className={`px-4 py-2 rounded-lg max-w-[80%] text-sm shadow-sm transition-transform transform hover:scale-[1.02] ${
                     msg.sender === "user"
                       ? "bg-green-600 text-white rounded-br-none"
                       : "bg-white text-gray-800 border border-gray-200 rounded-bl-none"
@@ -177,27 +176,29 @@ const ChatBox = () => {
               </div>
             ))}
             {loading && (
-              <div className="text-gray-400 text-sm italic">Typing...</div>
+              <div className="text-gray-400 text-sm italic animate-pulse">
+                Typing...
+              </div>
             )}
             <div ref={chatEndRef} />
           </div>
 
           {/* Input area */}
-          <div className="p-3 bg-white border-t flex items-center gap-2">
+          <div className="p-3 bg-gray-900 border-t flex items-center gap-2">
             <input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask me about health, food, or fitness..."
-              className="flex-1 px-3 py-2 border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="flex-1 px-4 py-2 text-sm bg-gray-900 border border-green-500 rounded-full text-white placeholder:text-gray-200 focus:outline-none transition"
               onKeyDown={(e) => e.key === "Enter" && handleSend()}
             />
             <button
               onClick={handleSend}
               disabled={loading}
-              className="bg-green-600 hover:bg-green-700 text-white p-2 rounded-full"
+              className="bg-green-600 hover:bg-green-700 text-white p-3 rounded-full transition shadow-md hover:shadow-lg"
             >
-              <FaPaperPlane size={14} />
+              <FaPaperPlane size={16} />
             </button>
           </div>
         </div>

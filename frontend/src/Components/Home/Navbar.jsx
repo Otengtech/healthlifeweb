@@ -158,14 +158,14 @@ const Navbar = () => {
         {/* Search bar (desktop) */}
         <form
           onSubmit={handleSearch}
-          className="hidden md:flex bg-gray-200 rounded-full overflow-hidden shadow-sm"
+          className="hidden md:flex bg-gray-100 rounded-full overflow-hidden shadow-sm"
         >
           <input
             type="text"
-            placeholder="Search..."
+            placeholder="Search for topics..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="px-4 py-2 w-52 text-gray-700 bg-transparent outline-none"
+            className="px-4 py-2 w-52 text-gray-700 placeholder:text-gray-500 bg-transparent outline-none"
           />
           <button
             type="submit"
