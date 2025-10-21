@@ -9,7 +9,10 @@ const responses = {
   fine: "That's nice, how can I help you?",
   great: "That's nice, how can I help you?",
   hi: "Hello! How are you feeling today?",
+  thank: "You're welcome! Let me know if you have any other questions.",
   hey: "Hey there! Need some advice on fitness or nutrition?",
+  about: "I’m here to help you with health tips, nutrition advice, fitness motivation, and more. Ask me anything related to a healthy lifestyle!",
+  advantages: "Using a chatbot like me can provide instant answers, personalized advice, and 24/7 support for your health and wellness journey.",
   exercise:
     "Regular exercise improves strength, endurance, and mood. Try at least 150 minutes of moderate activity per week.",
   workout:
@@ -135,7 +138,7 @@ const ChatBox = () => {
 
       {/* Chat box */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 w-80 sm:w-96 max-h-[500px] flex flex-col rounded-2xl shadow-2xl overflow-hidden border border-green-100 z-50">
+        <div className="fixed bottom-6 right-6 w-80 sm:w-96 max-h-[500px] flex flex-col rounded-2xl shadow-2xl overflow-hidden z-50">
           {/* Header */}
           <div className="bg-gradient-to-r from-green-600 to-green-500 text-white p-4 flex justify-between items-center">
             <h1 className="font-bold text-lg">HealthLife Assistant</h1>
