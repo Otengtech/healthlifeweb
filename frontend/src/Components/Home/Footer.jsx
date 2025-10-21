@@ -64,12 +64,12 @@ const Footer = () => {
           <ul className="space-y-2 text-sm">
             {[
               { name: "Home", path: "/" },
-              { name: "About Us", path: "/aboutuspage" },
-              { name: "Programs", path: "/programspage" },
-              { name: "Blog", path: "/blogpage" },
               { name: "Contact", path: "/contactpage" },
               { name: "About Us", path: "/aboutpage" },
               { name: "Health News", path: "/newspage" },
+              { name: "Privacy Policy", path: "/policypage" },
+              { name: "Terms of Service", path: "/termspage" },
+              { name: "Disclaimer", path: "/disclaimerpage" },
             ].map((link) => (
               <li key={link.name}>
                 <Link
@@ -154,8 +154,7 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="border-t border-gray-700 mt-10 pt-6 text-center text-xs sm:text-sm text-gray-400 px-4">
         <p>
-          &copy; {new Date().getFullYear()} HealthyLife. All rights reserved. | Designed by{" "}
-          <span className="text-green-400 font-medium">Oteng Ebenezer</span> & Team
+          &copy; {new Date().getFullYear()} HealthLife | Privacy Policy | Terms & Conditions | Disclaimer
         </p>
       </div>
     </footer>

@@ -26,6 +26,9 @@ import BeveragePage from "./Pages/BeveragePage";
 import ContactPage from "./Pages/ContactPage"
 import ScrollToTop from "./Home/ScrollToTop";
 import ChatBox from "./Home/ChatBot";
+import PolicyPage from "./Pages/PolicyPage";
+import DisclaimerPage from "./Pages/DisclaimerPage";
+import TermsPage from "./Pages/TermsPage";
 
 function App() {
 
@@ -66,6 +69,9 @@ function App() {
           <Route path="/proteinpage" element={<ProteinPage />} />
           <Route path="/herbpage" element={<HerbsPage />} />
           <Route path="/bevpage" element={<BeveragePage />} />
+          <Route path="/policypage" element={<PolicyPage />} />
+          <Route path="/termspage" element={<TermsPage />} />
+          <Route path="/disclaimerpage" element={<DisclaimerPage />} />
         </Routes>
         <ScrollToTop />
         <Footer />

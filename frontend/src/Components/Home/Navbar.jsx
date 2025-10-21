@@ -79,8 +79,7 @@ const Navbar = () => {
             <Link
               to="/"
               className="hover:text-gray-200 flex items-center gap-1"
-            >
-              <FaHome /> Home
+            > Home
             </Link>
 
             {/* Dropdown - Programs */}
@@ -90,7 +89,7 @@ const Navbar = () => {
               onMouseLeave={() => setDropdown(null)}
             >
               <button className="flex items-center gap-1 hover:text-gray-200">
-                <FaDumbbell /> <Link to="/programspage">Programs</Link>
+                <Link to="/programspage">Programs</Link>
               </button>
             </div>
 
@@ -101,7 +100,7 @@ const Navbar = () => {
               onMouseLeave={() => setDropdown(null)}
             >
               <button className="flex items-center gap-1 hover:text-gray-300">
-                <FaLink /> Links <FaChevronDown size={12} />
+                Links <FaChevronDown size={12} />
               </button>
               <AnimatePresence>
                 {dropdown === "articles" && (
