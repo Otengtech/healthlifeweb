@@ -138,7 +138,7 @@ const ChatBox = () => {
 
       {/* Chat box */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 w-80 sm:w-96 max-h-[500px] flex flex-col rounded-2xl shadow-2xl overflow-hidden z-50">
+        <div className="fixed bottom-6 right-6 w-full mx-2 sm:w-96 max-h-[500px] flex flex-col rounded-2xl shadow-2xl overflow-hidden z-50">
           {/* Header */}
           <div className="bg-gradient-to-r from-green-600 to-green-500 text-white p-4 flex justify-between items-center">
             <h1 className="font-bold text-lg">HealthLife Assistant</h1>
