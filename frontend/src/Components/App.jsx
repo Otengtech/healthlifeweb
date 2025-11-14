@@ -29,6 +29,7 @@ import ChatBox from "./Home/ChatBot";
 import PolicyPage from "./Pages/PolicyPage";
 import DisclaimerPage from "./Pages/DisclaimerPage";
 import TermsPage from "./Pages/TermsPage";
+import {useEffect} from "react";
 
 function App() {
   useEffect(() => {
