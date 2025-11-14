@@ -65,13 +65,7 @@ function App() {
           <div id="ad-container-320x50"></div>
         </div>
       <TopSec />
-      <div className="py-6 bg-gradient-to-br from-gray-900 to-black flex justify-center">
-          <div id="ad-container-320x50"></div>
-        </div>
       <LastSec />
-      <div className="py-6 bg-gradient-to-br from-gray-900 to-black flex justify-center">
-          <div id="ad-container-320x50"></div>
-        </div>
       <ChatBox />
     </>
   );
