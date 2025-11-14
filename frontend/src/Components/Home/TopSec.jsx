@@ -123,7 +123,7 @@ const TopSec = () => {
           {/* LEFT - Healthy Foods */}
           <div className="w-full lg:w-6/12 flex flex-col items-center">
             <motion.h2
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-green-400 mb-6 text-center"
+              className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-green-400 mb-6 text-center"
               initial={{ x: -100, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -253,7 +253,7 @@ const TopSec = () => {
       {/* ✅ What is Good Health Section */}
       <section className="py-16 bg-gray-900 text-center px-4 sm:px-6">
         <motion.h2
-          className="text-3xl md:text-5xl font-bold text-green-500 mb-6"
+          className="text-3xl md:text-6xl font-bold text-green-500 mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
