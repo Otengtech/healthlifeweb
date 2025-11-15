@@ -61,10 +61,11 @@ function App() {
   return (
     <>
       <Hero />
+      
+      <TopSec />
       <div className="py-6 bg-gradient-to-br from-gray-900 to-black flex justify-center">
           <div id="ad-container-320x50"></div>
         </div>
-      <TopSec />
       <LastSec />
       <ChatBox />
     </>
@@ -102,6 +103,9 @@ function App() {
           <Route path="/disclaimerpage" element={<DisclaimerPage />} />
         </Routes>
         <ScrollToTop />
+        <div className="py-6 bg-gradient-to-br from-gray-900 to-black flex justify-center">
+          <div id="ad-container-320x50"></div>
+        </div>
         <Footer />
       </div>
   );
