@@ -363,7 +363,7 @@ Benefits:
             <>
               {/* Backdrop for mobile */}
               <div 
-                className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
+                className="fixed inset-0 bg-black bg-opacity-50 top-10 left-0 z-30 md:hidden"
                 onClick={() => setSidebarOpen(false)}
               />
               

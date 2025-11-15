@@ -334,7 +334,7 @@ const RecipeSection = () => {
           </p>
         </div>
 
-        <RecipeButton to="/recipepage">
+        <RecipeButton to="/recipepage" className="justify-center text-center">
           Explore All Recipes
         </RecipeButton>
 
