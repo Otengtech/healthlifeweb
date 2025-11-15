@@ -233,7 +233,7 @@ const TopSec = () => {
 
                       {/* Image */}
                       <div className="md:w-1/2 relative">
-                        <div className="absolute inset-0 bg-gradient-to-l from-white to-transparent z-10 md:hidden" />
+                        {/* <div className="absolute inset-0 bg-gradient-to-l from-white to-transparent z-10 md:hidden" /> */}
                         <img
                           src={healthyProducts[currentIndex].image}
                           alt={healthyProducts[currentIndex].name}

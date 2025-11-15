@@ -184,12 +184,12 @@ const HeroSection = () => {
                     style={{ minWidth: 100 }}
                     animate={{ y: [0, -15, 0] }}
                     transition={{ repeat: Infinity, duration: 2, delay: idx * 0.3, ease: "easeInOut" }}
-                    whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.15)" }}
+                    whileHover={{ scale: 1.1 }}
                   >
-                    <div className={`p-3 rounded-full bg-gradient-to-r ${item.color} text-white text-2xl mb-2 shadow-lg`}>
+                    <div className={`p-4 rounded-full bg-gray-900 text-white text-2xl mb-2 shadow-lg`}>
                       {item.icon}
                     </div>
-                    <span className="text-white text-sm font-semibold text-center">{item.label}</span>
+                    <span className="text-white block md:hidden text-sm font-semibold text-center">{item.label}</span>
                   </motion.div>
                 ))}
               </div>
