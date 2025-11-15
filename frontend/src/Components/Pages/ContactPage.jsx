@@ -4,7 +4,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock } from "react-icons/fa"
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-emerald-950 via-gray-950 to-gray-900 text-gray-100 py-16 px-6">
+    <div className="min-h-screen bg-gradient-to-b from-emerald-950 via-gray-950 to-gray-900 text-gray-100 py-28 px-6">
       {/* Header Section */}
       <motion.h1
         initial={{ opacity: 0, y: -40 }}

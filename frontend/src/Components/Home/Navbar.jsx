@@ -111,7 +111,7 @@ const Navbar = () => {
       { label: "Health News", to: "/newspage", icon: <FaNewspaper /> },
       { label: "Blog Articles", to: "/blogpage", icon: <FaBlog /> },
       { label: "Trending Topics", to: "/trendingpage", icon: <FaChartLine /> },
-      { label: "Expert Advice", to: "/expertspage", icon: <FaUserMd /> },
+      { label: "Expert Advice", to: "/expertpage", icon: <FaUserMd /> },
       { label: "Health Tools", to: "/toolpage", icon: <FaTools /> },
       { label: "Recipes", to: "/recipepage", icon: <FaCookieBite /> },
     ],

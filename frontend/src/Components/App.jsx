@@ -97,7 +97,7 @@ function App() {
           <Route path="/proteinpage" element={<ProteinPage />} />
           <Route path="/herbpage" element={<HerbsPage />} />
           <Route path="/bevpage" element={<BeveragePage />} />
-          <Route path="/policypage" element={<PolicyPage />} />
+          <Route path="/privacy" element={<PolicyPage />} />
           <Route path="/termspage" element={<TermsPage />} />
           <Route path="/disclaimerpage" element={<DisclaimerPage />} />
         </Routes>
