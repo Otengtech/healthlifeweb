@@ -462,12 +462,9 @@ const TopSec = () => {
         style={{ backgroundImage: `url(${leftwindow})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 to-gray-900/70" />
-        <div className="relative w-full max-w-6xl flex flex-col md:flex-row items-center gap-12 md:gap-16">
+        <div className="relative w-full p-4 max-w-6xl flex flex-col md:flex-row items-center gap-12 md:gap-16">
           <div className="md:w-2/5">
             <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.6 }}
               className="text-white"
             >
               <div className="inline-flex items-center gap-2 bg-green-600/30 px-4 py-2 rounded-full mb-4">
@@ -527,7 +524,7 @@ const TopSec = () => {
                   className="group relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 cursor-pointer hover:bg-white/15 transition-all duration-300"
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`} />
-                  <div className={`text-3xl bg-gradient-to-r ${item.color} bg-clip-text text-transparent mb-4`}>
+                  <div className={`text-3xl bg-green-500 text-gray-900 bg-clip-text text-transparent mb-4`}>
                     {item.icon}
                   </div>
                   <h4 className="text-xl font-bold text-white mb-2 group-hover:text-green-200 transition-colors">
